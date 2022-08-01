@@ -1,0 +1,24 @@
+$backgroundColorLight: #ffffff;
+$backgroundColorDark: #ffffff;
+
+$textColor: #2C2C2C;
+$textColorSecond: #444444;
+$textColorHeader: #2B2A28;
+$textColorPlaceholder:#848484;
+
+$themeColorRed: #F93C00;
+$themeColorGreen: #0CA41B;
+
+$backgroundGrey: #F8F8F8;
+
+$buttonColorText: #ffffff;
+$buttonColor: linear-gradient(90deg, #21A5B5 0%, #71B2B4 100%);
+$buttonColorClick: linear-gradient(90deg, #21A5B5 0%, #71B2B4 100%);
+$buttonColorHover: linear-gradient(90deg, #28BFD1 0%, #85CFD1 100%);
+
+$borderInput: #CFCFCF;
+$borderInputFocus: $buttonColor;
+$borderInputError: $themeColorRed;
+
+$systemIconsColor: $textColorPlaceholder;
+

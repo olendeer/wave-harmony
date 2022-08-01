@@ -1,0 +1,8 @@
+@mixin fontNormal($px: 16px) {
+    font: {
+        weight: 400;
+        style: normal;
+        size: $px;
+    }
+    line-height: 140%;
+}

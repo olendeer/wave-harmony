@@ -1,3 +1,22 @@
-@import './assets/fonts/FuturaPT/stylesheet.scss'
+@import './assets/fonts/FuturaPT/stylesheet.scss';
+
+html, button, input, textarea{
+	font: {
+		family: 'Futura PT';
+		size: 20px;
+	}
+}
+
+*, button, input, textarea{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 1rem;
+	border: none;
+	outline: none;
+}
 
 
+body{
+	padding: 2rem; //
+}
