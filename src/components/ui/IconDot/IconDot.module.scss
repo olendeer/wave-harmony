@@ -1,0 +1,19 @@
+@import '@/styles/_variables';
+
+.icon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
+    span{
+        background: $themeColorRed;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+}

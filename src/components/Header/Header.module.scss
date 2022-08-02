@@ -1,0 +1,70 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.header{
+    display: grid;
+    grid-template: 80px 110px / 1fr;
+    &-nav{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        padding-top: 30px;
+
+        &__contacts{
+            justify-self: start;
+            font: {
+                weight: 300;
+                size: 18px
+            }
+            color: $textColorPlaceholder;
+            span{
+                color: $textColorHeader;
+                @include fontNormal(18px);
+            }
+        }
+
+        &__buttons{
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            column-gap: 27px;
+        }
+    }
+    &-links{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding-bottom: 40px;
+        &__list{
+            display: flex;
+            column-gap: 10px;
+        }
+
+        &__sale{
+            color: $themeColorRed;
+            white-space: nowrap;
+            @include fontNormal(18px);
+        }
+    }
+}
+
+.link{
+    min-height: 35px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    color: $textColorHeader;
+    transition-duration: .2s;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    @include fontNormal(18px);
+
+    svg{
+        margin-left: 6px;
+    }
+
+    &:hover{
+        background: $headerLinkBack;
+    }
+}
