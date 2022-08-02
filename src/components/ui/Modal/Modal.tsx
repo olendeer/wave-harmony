@@ -3,7 +3,7 @@ import { IModalProps } from "./types"
 
 import { stopPropagation } from "@/utilites/stopPropagation"
 
-import {ReactComponent as Close} from '@/assets/svg/close.svg'
+import { ReactComponent as Close } from '@/assets/svg/close.svg'
 
 import styles from './Modal.module.scss'
 

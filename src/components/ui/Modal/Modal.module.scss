@@ -1,4 +1,5 @@
 @import '@/styles/_variables';
+@import '@/styles/_abstract';
 
 .modal{
     position: fixed;
@@ -22,15 +23,9 @@
         transform: scale(.5);
         transition-duration: .2s;
         svg{
-            position: absolute;
             right: 20px;
             top: 20px;
-            cursor: pointer;
-            color: $systemIconsColor;
-            transition-duration: .2s;
-            &:hover{
-                color: darken($systemIconsColor, 20%);
-            }
+            @extend %closeIcon;
         }
     }
 

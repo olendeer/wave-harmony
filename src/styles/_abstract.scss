@@ -1,3 +1,6 @@
+@import '@/styles/_variables';
+
+
 %fullPseudo{
     content: '';
     position: absolute;
@@ -5,4 +8,14 @@
     left: 0px;
     width: 100%;
     height: 100%;
+}
+
+%closeIcon{
+    position: absolute;
+    cursor: pointer;
+    color: $systemIconsColor;
+    transition-duration: .2s;
+    &:hover{
+        color: darken($systemIconsColor, 20%);
+    }
 }
