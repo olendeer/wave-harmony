@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Link, NavLink } from 'react-router-dom'
 
 import IconDot from '@c/ui/IconDot/IconDot'
@@ -7,6 +9,7 @@ import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { ReactComponent as Heart } from '@/assets/svg/heart.svg'
 import { ReactComponent as Search } from '@/assets/svg/search.svg'
+import { ReactComponent as User } from '@/assets/svg/user.svg'
 
 import { ReactComponent as Gift } from '@/assets/svg/gift.svg'
 
@@ -14,7 +17,7 @@ import { ReactComponent as Gift } from '@/assets/svg/gift.svg'
 
 import styles from './Header.module.scss'
 
-const Header = () => {
+const Header: FC = () => {
     return (
         <ContainerLayout>
             <header className={styles.header}>
@@ -23,6 +26,7 @@ const Header = () => {
                     <Logo/>
                     <div className={styles['header-nav__buttons']}>
                         <IconDot icon={<Search/>} dot={false} />
+                        <IconDot icon={<User/>} dot={false} />
                         <IconDot icon={<Heart/>} dot={true} />
                         <IconDot icon={<Cart/>} dot={true} />
                     </div>

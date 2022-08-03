@@ -1,0 +1,7 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.header{
+    color: $textColor;
+    @include fontNormal(44px)
+}

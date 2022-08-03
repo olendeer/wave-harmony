@@ -1,4 +1,5 @@
-import { ChangeEvent, ReactElement } from "react";
+import { ChangeInput } from "@/shared/types";
+import { ReactElement } from "react";
 
 export interface IInputProps{
     placeholder: string,
@@ -6,6 +7,7 @@ export interface IInputProps{
     defaultValue?: string,
     type: string,
     value: string,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void,
-    icon?: ReactElement
+    onChange: ChangeInput
+    icon?: ReactElement,
+    height?: string
 }

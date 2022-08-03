@@ -1,9 +1,10 @@
-import Home from './views/Home/Home'
-
+import { FC } from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 
+import Home from './views/Home/Home'
 
-const App = () => {
+
+const App: FC = () => {
 
     return (
         <BrowserRouter>

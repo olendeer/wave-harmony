@@ -1,11 +1,6 @@
 @import '@/styles/_variables';
 @import '@/styles/_abstract';
-
-@mixin gradientBackground($color){
-    background: $color;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+@import '@/styles/_mixins';
 
 @mixin whiteAfterBackground{
     background: $backgroundColorLight;
@@ -67,7 +62,7 @@
 
     &--stroke {
         span{
-            @include gradientBackground($buttonColor);
+            @include gradientText($buttonColor);
         }
 
         &::after{
@@ -81,7 +76,7 @@
 
         &:hover{
             span{
-                @include gradientBackground($buttonColorText)
+                @include gradientText($buttonColorText)
             }
 
             &::before{
@@ -95,7 +90,7 @@
 
         &:active{
             span{
-                @include gradientBackground($buttonColor)
+                @include gradientText($buttonColor)
             }
     
             &::after{

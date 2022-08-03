@@ -1,0 +1,18 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.advantage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    &__title{
+        margin-bottom: 13px;
+        @include fontNormal(20px);
+    }
+
+    &__text{
+        @include fontNormal(18px);
+        font-weight: 300;
+    }
+}

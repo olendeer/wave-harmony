@@ -1,0 +1,38 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.2fr 1fr;
+    padding: 80px 0px 70px;
+
+    &__link{
+        margin-bottom: 10px;
+        color: $textColorSecond;
+        @include fontNormal(16px)
+    }
+
+    &__email{
+        color: $textColorSecond;
+        margin-bottom: 15px;
+        @include fontNormal(18px);
+    }
+
+    &__phone{
+        @include gradientText($buttonColor);
+        @include fontNormal(18px);
+    }
+
+    &__social-list{
+        display: flex;
+        column-gap: 10px;
+        margin: 30px 0px;
+    }
+
+    &__copyright{
+        @include fontNormal(16px);
+        width: 80%;
+        font-weight: 300;
+        color: $textColorPlaceholder;
+    }
+}

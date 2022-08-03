@@ -1,3 +1,5 @@
-import { ReactElement } from "react";
+import { ChangeEvent, ReactElement } from "react";
 
-export type ChildrenProp = ReactElement | string
+export type ChildrenProp = ReactElement | ReactElement[] | string
+
+export type ChangeInput = (event: ChangeEvent<HTMLInputElement>) => void

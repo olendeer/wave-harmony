@@ -7,6 +7,11 @@ html, button, input, textarea{
 	}
 }
 
+body{
+	width: 100vw;
+	overflow-x: hidden;
+}
+
 *, button, input, textarea{
 	margin: 0;
 	padding: 0;
