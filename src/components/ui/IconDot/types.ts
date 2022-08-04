@@ -1,6 +1,7 @@
 import { ChildrenProp } from "@/shared/types";
 
 export interface IIconDotProps {
-    icon: ChildrenProp,
+    icon: ChildrenProp
     dot: boolean
+    pt?: number
 }

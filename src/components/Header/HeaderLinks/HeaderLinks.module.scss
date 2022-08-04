@@ -1,0 +1,62 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.header-links{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-top: 35px;
+    align-items: start;
+
+    &--collapse{
+        padding-top: 0px;
+
+        .header-links{
+            
+            &__list{
+                column-gap: 0;
+
+                .link{
+                    @include fontNormal(17px);
+                }
+            }
+
+            &__sale{
+                padding: 7px 0px;
+                @include fontNormal(17px);
+            }
+        }
+    }
+
+    &__list{
+        display: flex;
+        column-gap: 10px;
+    }
+
+    &__sale{
+        color: $themeColorRed;
+        white-space: nowrap;
+        padding: 7px 0px;
+        display: flex;
+        align-items: center;
+        @include fontNormal(18px);
+    }
+}
+
+.link{
+    padding: 7px 15px;
+    border-radius: 10px;
+    color: $textColorHeader;
+    transition-duration: .2s;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    @include fontNormal(18px);
+
+    svg{
+        margin-left: 6px;
+    }
+
+    &:hover{
+        background: $headerLinkBack;
+    }
+}

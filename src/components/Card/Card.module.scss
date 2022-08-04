@@ -1,0 +1,128 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+
+.card{
+    display: grid;
+    grid-auto-flow: row;
+    padding-bottom: 110px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &--small{
+        width: 335px;
+    }
+
+    &:hover{
+        .card__info{
+            bottom: -1px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        background-color: $backgroundGrey;
+        overflow: hidden;
+        position: relative;
+
+        &-favourite{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 24px;
+            height: 20px;
+            cursor: pointer;
+            color: transparent;
+            transition-duration: .2s;
+
+            &--active{
+                color: $textColor;
+            }
+
+            &:hover{
+                color: $textColor;
+            }
+        }
+
+        &-sale{
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            padding: 0px 7px;
+            height: 32px;
+            border-radius: 10px;
+            background-color: $themeColorRed;
+            display: flex;
+            align-items: center;
+            @include fontNormal(18px);
+            color: $backgroundColorLight;
+        }
+
+        & > img{
+            width: 100%;
+            margin-bottom: -6px;
+        }
+    }
+
+    &__info{
+        display: grid;
+        grid-auto-flow: row;
+        padding: 25px 0px 1px;
+        position: absolute;
+        background: $backgroundColorLight;
+        width: 100%;
+        bottom: -74px;
+        transition-duration: .4s;
+
+        &-price{
+            color: $textColor;
+            @include fontBold(20px);
+
+            &--sale{
+                color: $themeColorRed;
+                display: flex;
+                align-items: center;
+
+                & > span {
+                    margin-left: 10px;
+                    color: $textColorPlaceholder;
+                    text-decoration: line-through solid $themeColorRed;
+                    @include fontNormal(16px);
+                }
+            }
+        }
+
+        &-type{
+            color: $textColor;
+            @include fontNormal(20px);
+        }
+
+        &-sizes{
+            color: $textColor;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            height: 22px;
+            @include fontNormal(20px);
+            
+            & > span{
+                display: flex;
+                align-items: center;
+
+                &:not(:last-child)::after{
+                    content: '';
+                    height: 8px;
+                    width: 1px;
+                    margin: 0px 7px;
+                    background-color: $borderInput;
+                }
+            }
+        }
+
+        &-buy{
+            justify-self: start;
+            margin-top: 20px;
+        }
+    }
+}

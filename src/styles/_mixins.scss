@@ -7,6 +7,15 @@
     line-height: 140%;
 }
 
+@mixin fontBold($px: 20px) {
+    font: {
+        weight: 900;
+        style: normal;
+        size: $px;
+    }
+    line-height: 140%;
+}
+
 @mixin gradientText ($color) {
     background: $color;
     -webkit-background-clip: text;

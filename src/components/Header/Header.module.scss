@@ -1,9 +1,46 @@
 @import '@/styles/_variables';
 @import '@/styles/_mixins';
 
+.plug{
+    height: 190px;
+}
+
+.wrapper{
+    background: $backgroundColorLight;
+    position: fixed;
+    z-index: 3;
+    opacity: .5;
+    transform: translateY(-90px);
+    left: 0;
+    top: 0;
+    animation: header .4s ease forwards;
+}
+
+@keyframes header {
+    0%{
+        opacity: .6;
+        transform: translateY(-90px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 .header{
     display: grid;
     grid-template: 80px 110px / 1fr;
+
+    &--collapse{
+       grid-template-rows: 80px;
+       
+       .header-nav{
+            padding-top: 0px;
+            grid-template-columns: repeat(2, 1fr);
+       }
+    }
+
     &-nav{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -30,41 +67,5 @@
             align-items: center;
             column-gap: 17px;
         }
-    }
-    &-links{
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        padding-bottom: 40px;
-        &__list{
-            display: flex;
-            column-gap: 10px;
-        }
-
-        &__sale{
-            color: $themeColorRed;
-            white-space: nowrap;
-            @include fontNormal(18px);
-        }
-    }
-}
-
-.link{
-    min-height: 35px;
-    padding: 7px 15px;
-    border-radius: 10px;
-    color: $textColorHeader;
-    transition-duration: .2s;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    @include fontNormal(18px);
-
-    svg{
-        margin-left: 6px;
-    }
-
-    &:hover{
-        background: $headerLinkBack;
     }
 }
