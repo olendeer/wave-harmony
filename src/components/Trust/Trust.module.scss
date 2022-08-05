@@ -1,0 +1,22 @@
+@import '@/styles/_variables';
+
+.wrapper{
+    padding: 110px 0px 120px;
+    border-top: 1px solid $backgroundGrey;
+}
+
+.trust {
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    &__body{
+        display: grid;
+        grid-template-columns: 174px 1fr;
+        height: 510px;
+    }
+}

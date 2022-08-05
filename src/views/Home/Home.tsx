@@ -1,27 +1,22 @@
 import { FC } from "react"
 
-import BestClothes from "@/components/BestClothes/BestClothes"
-import MainLayout from "@/components/layouts/MainLayout/MainLayout"
-import Mailing from "@/components/Mailing/Mailing"
-import Gallery from "@/components/Gallery/Gallery"
-import Card from "@/components/Card/Card"
+import BestClothes from "@c/BestClothes/BestClothes"
+import MainLayout from "@c/layouts/MainLayout/MainLayout"
+import Mailing from "@c/Mailing/Mailing"
+import Gallery from "@c/Gallery/Gallery"
+import PopularProducts from "@c/PopularProducts/PopularProducts"
+import MainSlider from "@c/MainSlider/MainSlider"
+import Trust from "@c/Trust/Trust"
+// import Card from "@/components/Card/Card"
 
 // import styles from "./Home.module.scss"
 
 const Home: FC = () => {
 	return (
 		<MainLayout>
-			<Card
-				size="small"
-				product={{
-					fav: false,
-					type: "Unity",
-					images: ["data/products/1/1.png"],
-					price: 4000,
-					sale: null,
-					sizes: ["XS", "S", "M", "L", "По меркам"],
-				}}
-			/>
+			<MainSlider />
+			<PopularProducts />
+			<Trust />
 			<BestClothes />
 			<Gallery />
 			<Mailing />

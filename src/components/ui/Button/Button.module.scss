@@ -63,6 +63,10 @@
     &--stroke {
         span{
             @include gradientText($buttonColor);
+            
+            svg path {
+                transition-duration: .4s;
+            }
         }
 
         &::after{
@@ -76,7 +80,11 @@
 
         &:hover{
             span{
-                @include gradientText($buttonColorText)
+                @include gradientText($buttonColorText);
+
+                svg path {
+                    stroke: $backgroundColorLight;
+                }
             }
 
             &::before{
@@ -90,7 +98,11 @@
 
         &:active{
             span{
-                @include gradientText($buttonColor)
+                @include gradientText($buttonColor);
+                
+                svg path {
+                    stroke: $iconGradientColor;
+                }
             }
     
             &::after{
@@ -98,4 +110,34 @@
             }
         }
     }
+
+    &--stroke-white {
+        background: transparent;
+        border: 1px solid $backgroundColorLight;
+
+        &::after, &::before{
+            display: none;
+        }
+
+        span{
+            color: $backgroundColorLight;
+        }
+
+        &:hover{
+            background: $backgroundColorLight;
+
+            span{
+                @include gradientText($bannerGradient);
+            }
+        }
+
+        &:active{
+            background: transparent;
+
+            span{
+                @include gradientText($backgroundColorLight)
+            }
+        }
+    }
+
 }

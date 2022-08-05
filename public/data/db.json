@@ -1,0 +1,36 @@
+{
+    "trust": [
+        {
+            "id": 1,
+            "image": "data/trust/1.png",
+            "name" : "Регина Тодоренко",
+            "inst_link" : "https://instagram.com/",
+            "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+            "video_link" : "https://instagram.com/"
+        },
+        {
+            "id": 2,
+            "image": "data/trust/2.png",
+            "name" : "Блогер",
+            "inst_link" : "https://instagram.com/",
+            "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+            "video_link" : "https://instagram.com/"
+        },
+        {
+            "id": 3,
+            "image": "data/trust/3.png",
+            "name" : "Блогер 2",
+            "inst_link" : "https://instagram.com/",
+            "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+            "video_link" : "https://instagram.com/"
+        },
+        {
+            "id": 4,
+            "image": "data/trust/3.png",
+            "name" : "Блогер 3",
+            "inst_link" : "https://instagram.com/",
+            "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+            "video_link" : "https://instagram.com/"
+        }
+    ]
+}
