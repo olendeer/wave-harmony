@@ -15,11 +15,11 @@ body{
 	overflow-x: hidden;
 }
 
-*, button, input, textarea{
+*{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-size: 1rem;
+	// font-size: 1rem;
 	border: none;
 	outline: none;
 }
