@@ -1,6 +1,6 @@
-import { ChangeEvent, ReactElement } from "react";
+import { ChangeEvent, ReactElement, ReactNode } from "react";
 
-export type ChildrenProp = ReactElement | ReactElement[] | string | string[]
+export type ChildrenProp = ReactElement | ReactElement[] | string | string[] | JSX.Element | ReactNode
 
 export type ChangeInput = (event: ChangeEvent<HTMLInputElement>) => void
 

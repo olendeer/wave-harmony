@@ -8,3 +8,6 @@ export const trustSelector = (state: RootState) => state.trust.trusts
 
 export const mainSliderSelector = (state: RootState) => state.mainSlider.slides
 
+export const gallerySelector = (state: RootState) => state.gallery.images
+
+

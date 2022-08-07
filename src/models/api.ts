@@ -6,6 +6,7 @@ import { ITrust } from "./trust"
 import { IProduct } from './product'
 import { IMainSlide } from "./mainSlide"
 import { MainSliderApi } from "@/services/ApiService/MainSliderApi"
+import { GalleryApi } from "@/services/ApiService/galleryApi"
 
 
 // Тип клиента
@@ -29,18 +30,20 @@ export interface IMainSliderApi {
     fetchMainSlider: () => Promise<IMainSlide[]>
 }
 
-
+export interface IGalleryApi {
+    fetchGallery: () => Promise<string[]>
+}
 
 // Типы сервисов которые доступны к добавлению в апи
 
-export type IService = typeof TrustApi | typeof ProductsApi | typeof MainSliderApi // | что-то ещё.....
+export type IService = typeof TrustApi | typeof ProductsApi | typeof MainSliderApi | typeof GalleryApi // | что-то ещё.....
 
 
 
 
 // Интерфейс общего сервиса
 
-export type IApiClient = ITrustApi & IProductsApi & IMainSliderApi // & что-то ещё'
+export type IApiClient = ITrustApi & IProductsApi & IMainSliderApi & IGalleryApi // & что-то ещё'
 
 
 

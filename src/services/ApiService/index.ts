@@ -3,6 +3,7 @@ import { TrustApi } from './TrustApi'
 import { ProductsApi } from './ProductsApi'
 import { axiosClient } from './clients'
 import { MainSliderApi } from './MainSliderApi'
+import { GalleryApi } from './galleryApi'
 
 
 class ApiService {
@@ -36,7 +37,7 @@ class ApiService {
 const apiInstance = new ApiService(axiosClient)
 
 
-apiInstance.add(TrustApi).add(ProductsApi).add(MainSliderApi)
+apiInstance.add(TrustApi).add(ProductsApi).add(MainSliderApi).add(GalleryApi)
 
 const Api = apiInstance.service
 

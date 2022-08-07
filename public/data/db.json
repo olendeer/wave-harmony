@@ -206,5 +206,29 @@
     ],
     "user": {
         
-    }
+    },
+    "gallery" : [
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png", 
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png", 
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png", 
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png", 
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png", 
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png",
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png",
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png",
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png",
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png",
+        "data/gallery/g1.png", 
+        "data/gallery/g2.png"
+    ]
 }

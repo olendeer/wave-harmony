@@ -1,15 +1,49 @@
-import { FC } from "react"
-import ContainerLayout from "../layouts/ContainerLayout/ContainerLayout"
-import Button from "../ui/Button/Button"
+import { FC, useState, useEffect } from "react"
 
-import SectionHeader from "../ui/SectionHeader/SectionHeader"
+import ContainerLayout from "@c/layouts/ContainerLayout/ContainerLayout"
+import Button from "@c/ui/Button/Button"
+import Modal from "@c/ui/Modal/Modal"
+import SectionHeader from "@c/ui/SectionHeader/SectionHeader"
 
-import G1 from "@/assets/png/gallery/g1.png"
-import G2 from "@/assets/png/gallery/g2.png"
+import { useModal } from "@/hooks/useModal"
+import { useActions, useAppSelector } from "@/store/hooks"
+import { gallerySelector } from "@/store/selectors"
 
 import styles from "./Gallery.module.scss"
+import { useCallback } from "react"
+import Loading from "@c/ui/Loading/Loading"
+import { useRef } from "react"
 
 const Gallery: FC = () => {
+	const modal = useModal()
+
+	const { fetchGallery } = useActions()
+
+	const gallery = useAppSelector(gallerySelector)
+
+	const [image, setImage] = useState<string>("")
+	const [load, setLoad] = useState<boolean>(false)
+
+	const imageRef = useRef<HTMLImageElement | null>(null)
+
+	const scaleImage = useCallback(
+		(image: string) => {
+			setImage(image)
+			modal.changeOpen(true)
+			setLoad(true)
+		},
+		[modal]
+	)
+
+	useEffect(() => {
+		if (load && imageRef.current?.complete) setLoad(false)
+	}, [load])
+
+	useEffect(() => {
+		fetchGallery()
+		// eslint-disable-next-line
+	}, [])
+
 	return (
 		<ContainerLayout>
 			<section className={styles.gallery}>
@@ -26,21 +60,26 @@ const Gallery: FC = () => {
 					</Button>
 				</div>
 				<div className={styles.gallery__body}>
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
-					<img className={styles.gallery__image} src={G1} alt="" />
-					<img className={styles.gallery__image} src={G2} alt="" />
+					{gallery.map((image, index) => (
+						<div
+							key={index}
+							className={styles.gallery__image}
+							onClick={scaleImage.bind(null, image)}
+						>
+							<img src={image} alt="" />
+							<span>Увеличить +</span>
+						</div>
+					))}
 				</div>
+				<Modal {...modal} className={styles.gallery__modal}>
+					{load && <Loading />}
+					<img
+						ref={imageRef}
+						src={image}
+						alt="gallery item"
+						onLoad={() => setLoad(false)}
+					/>
+				</Modal>
 			</section>
 		</ContainerLayout>
 	)
