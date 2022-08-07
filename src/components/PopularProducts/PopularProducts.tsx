@@ -60,6 +60,7 @@ const PopularProducts: FC = () => {
 						ref={slider}
 						slidesToShow={4}
 						slidesToScroll={1}
+						lazyLoad={"ondemand"}
 						infinite
 					>
 						{products.map((product) => (
