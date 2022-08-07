@@ -1,0 +1,52 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.popular{
+    padding: 80px 0px 120px;
+
+    &__header{
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+        height: 100px;
+        margin-bottom: 60px;
+    }
+
+    &__buttons{
+        grid-column-start: 2;
+        grid-row: 1 / 2;
+        justify-self: end;
+        align-self: end;
+        display: grid;
+        grid-template-columns: auto 246px;
+        column-gap: 111px;
+        
+        &-slider{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 15px;
+            
+            & > button:first-child svg {
+                transform: rotate(180deg);
+            }
+
+            & path{
+                stroke: $iconGradientColor;
+            }
+        }
+    }
+
+    &__description{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: end;
+        color: $textColorSecond;
+        @include fontNormal(20px);
+    }
+
+    &__title{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: start;
+    }
+}

@@ -1,3 +1,3 @@
-import React from "react";
+import { MouseEvent } from "react";
 
-export const stopPropagation = (event: React.MouseEvent) => event.stopPropagation()
+export const stopPropagation = (event: MouseEvent) => event.stopPropagation()

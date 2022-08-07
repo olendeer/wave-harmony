@@ -18,6 +18,7 @@ const Header: FC = () => {
 	const scrollHandler = () => setCollapse(window.scrollY > 150 ? true : false)
 
 	useEffect(() => {
+		scrollHandler()
 		document.addEventListener("scroll", scrollHandler)
 		return () => document.removeEventListener("scroll", scrollHandler)
 	}, [])

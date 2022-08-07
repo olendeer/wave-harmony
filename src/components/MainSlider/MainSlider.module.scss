@@ -1,0 +1,126 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.wrapper{
+    background: $bannerGradient;
+    position: relative;
+    
+    &::after{
+        content: '';
+        background-image: url('../../assets/svg/wave.svg');
+        background-size: 100% 100%;
+        background-repeat: repeat-x;
+        animation: wave 4s linear  infinite;
+        position: absolute;
+        bottom: -1px;
+        width: 150%;
+        height: 80px;
+        z-index: 2;
+    }
+}
+
+@keyframes wave {
+    0%{
+        transform: translateX(0%);
+    }
+    
+    100%{
+        transform: translateX(-25%);
+    }
+}
+
+.banner{
+    height: 700px;
+    position: relative;
+
+    &::after{
+        content: '';
+        background-image: url('../../assets/svg/palm1.svg');
+        width: 400px;
+        height: 245px;
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+    }
+
+    &::before{
+        content: '';
+        background-image: url('../../assets/svg/palm2.svg');
+        width: 470px;
+        height: 670px;
+        position: absolute;
+        bottom: -20%;
+        right: 0%;
+    }
+
+    &__slider{
+        z-index: 2;
+
+        &-dots{
+            position: absolute;
+            bottom: 150px;
+            left: 2px;
+            display: flex !important;
+            align-items: center;
+            column-gap: 10px;
+            z-index: 3;
+        }
+
+        &-dot{
+            width: 15px;
+            height: 6px;
+            border-radius: 2px;
+            background: rgba($backgroundColorLight, 0.25);
+            cursor: pointer;
+            transition-duration: .4s;
+
+            &:hover{
+                background: white;
+            }
+
+            &--active{
+                background: white;
+            }
+        }
+    }
+}
+
+.slide{
+    display: grid !important;
+    height: 700px;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    padding: 0px 2px;
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 100px;
+
+        &-title{
+            color: $backgroundColorLight;
+            background-image: url('../../assets/svg/waves.svg');
+            background-repeat: no-repeat;
+            background-position: 25% 60%;
+            @include fontMedium(90px);
+        }
+
+        &-description{
+            margin: 10px 0px 50px;
+            color: $backgroundColorLight;
+            @include fontLight(26px);
+        }
+    }
+
+    &__images{
+        display: flex;
+        align-items: flex-start;
+
+        img:last-child{
+            margin-top: 60px;
+        }
+    }
+}

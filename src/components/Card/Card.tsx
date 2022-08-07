@@ -1,12 +1,13 @@
 import { FC } from "react"
 import { ICardProps } from "./types"
 
+import Button from "@c/ui/Button/Button"
+
 import { PriceUtil } from "@/utilites/priceUtil"
 
 import { ReactComponent as HeartFav } from "@/assets/svg/heart-fav.svg"
 
 import styles from "./Card.module.scss"
-import Button from "../ui/Button/Button"
 
 const Card: FC<ICardProps> = ({ size = "small", product }) => {
 	return (
@@ -16,9 +17,9 @@ const Card: FC<ICardProps> = ({ size = "small", product }) => {
 				<HeartFav
 					className={[
 						styles["card__image-favourite"],
-						product.fav
-							? styles["card__image-favourite--active"]
-							: "",
+						// product.fav
+						// 	? styles["card__image-favourite--active"]
+						// 	: "",
 					].join(" ")}
 				/>
 				{product.sale && (
@@ -48,8 +49,8 @@ const Card: FC<ICardProps> = ({ size = "small", product }) => {
 						{PriceUtil.price(product.price)}
 					</span>
 				)}
-				<span className={styles["card__info-type"]}>
-					{product.type}
+				<span className={styles["card__info-name"]}>
+					{product.name}
 				</span>
 				<span className={styles["card__info-sizes"]}>
 					{product.sizes.map((item) => (

@@ -1,0 +1,139 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+
+
+.wrapper{
+    padding: 110px 0px 120px;
+    border-top: 1px solid $backgroundGrey;
+}
+
+.trust {
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    &__body{
+        display: grid;
+        grid-template-columns: 174px 1fr;
+        column-gap: 40px;
+        height: 510px;
+    }
+
+    .card{
+        display: grid;
+        grid-template-columns: 1fr .9fr;
+        column-gap: 60px;
+        position: relative;
+
+        &__image{
+            border-radius: 40px;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__info{
+            width: 100%;
+            height: 100%;
+            background-color: $backgroundColorLight;
+            position: relative;
+            z-index: 1;
+            border-radius: 80px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            align-content: center;
+            padding-left: 105px;
+            padding-right: 120px;
+            column-gap: 10px;
+
+            &-inst{
+                @include gradientText($buttonColor);
+                @include fontNormal(19px);
+            }
+
+            &-followers{
+                @include fontMedium(16px);
+                color: $textColorPlaceholder;
+            }
+
+            &-name{
+                @include fontMedium(25px);
+                color: $textColor;
+                grid-column: span 2;
+                margin-bottom: 5px;
+            }
+
+            &-description{
+                @include fontNormal(18px);
+                margin: 15px 0px;
+                color: $textColor;
+                grid-column: span 2;
+            }
+
+            &-video{
+                @include fontNormal(18px);
+                @include gradientText($buttonColor);
+                grid-column: span 2;
+            }
+        }
+
+        &__background{
+            height: 100%;
+            top: 0px;
+            right: 0px;
+            position: absolute;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template: 1fr 1fr / 1fr 1fr;
+        }
+    }
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar{
+        width: 8px;
+        background: $borderPopup;
+        border-radius: 10px;
+
+        &-thumb{
+            background: $borderInput;
+            border-radius: 10px;
+        }
+    }
+
+    & > img{
+        width: 150px;
+        height: 140px;
+        margin-bottom: 15px;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+}
+
+
+$gradients: ("1": rgba(249, 93, 149, 0.7), "2": rgba(93, 146, 249, 0.7), "3": rgba(199, 93, 249, 0.7), "4": rgba(93, 207, 249, 0.7));
+
+.gradient{
+
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    @each $num, $gradient in $gradients {
+        &:nth-child(#{$num}){
+            background:  $gradient;
+        }
+    }
+}

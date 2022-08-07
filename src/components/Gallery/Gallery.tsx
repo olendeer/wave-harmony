@@ -1,13 +1,13 @@
-import { FC } from "react";
-import ContainerLayout from "../layouts/ContainerLayout/ContainerLayout";
-import Button from "../ui/Button/Button";
+import { FC } from "react"
+import ContainerLayout from "../layouts/ContainerLayout/ContainerLayout"
+import Button from "../ui/Button/Button"
 
-import SectionHeader from "../ui/SectionHeader/SectionHeader";
+import SectionHeader from "../ui/SectionHeader/SectionHeader"
 
-import G1 from "@/assets/png/gallery/g1.png";
-import G2 from "@/assets/png/gallery/g2.png";
+import G1 from "@/assets/png/gallery/g1.png"
+import G2 from "@/assets/png/gallery/g2.png"
 
-import styles from "./Gallery.module.scss";
+import styles from "./Gallery.module.scss"
 
 const Gallery: FC = () => {
 	return (
@@ -43,7 +43,7 @@ const Gallery: FC = () => {
 				</div>
 			</section>
 		</ContainerLayout>
-	);
-};
+	)
+}
 
-export default Gallery;
+export default Gallery

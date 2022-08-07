@@ -1,4 +1,5 @@
-import { IProduct } from "@/shared/types"
+import { IProduct } from "@/models/product"
+
 
 export interface ICardProps{
     size?: string

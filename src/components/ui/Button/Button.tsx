@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC } from "react"
 
-import { IButtonProps } from "./types";
+import { IButtonProps } from "./types"
 
-import styles from "./Button.module.scss";
+import styles from "./Button.module.scss"
 
 const Button: FC<IButtonProps> = ({
 	children,
@@ -24,7 +24,7 @@ const Button: FC<IButtonProps> = ({
 		>
 			<span>{children}</span>
 		</button>
-	);
-};
+	)
+}
 
-export default Button;
+export default Button

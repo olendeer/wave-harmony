@@ -1,4 +1,5 @@
 @import '@/styles/_variables';
+@import '@/styles/_mixins';
 
 .wrapper{
     background-color: $backgroundGrey;
@@ -11,6 +12,8 @@
     &__info{
         display: flex;
         align-items: center;
+        @include fontNormal(20px);
+        
         svg{
             margin-right: 30px;
         }
