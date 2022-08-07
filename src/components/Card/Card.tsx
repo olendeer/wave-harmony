@@ -1,7 +1,8 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import { ICardProps } from "./types"
 
 import Button from "@c/ui/Button/Button"
+import Loading from "@c/ui/Loading/Loading"
 
 import { PriceUtil } from "@/utilites/priceUtil"
 
@@ -10,10 +11,17 @@ import { ReactComponent as HeartFav } from "@/assets/svg/heart-fav.svg"
 import styles from "./Card.module.scss"
 
 const Card: FC<ICardProps> = ({ size = "small", product }) => {
+	const [load, setLoad] = useState<boolean>(true)
+
 	return (
 		<div className={[styles.card, styles[`card--${size}`]].join(" ")}>
 			<div className={styles.card__image}>
-				<img src={product.images[0]} alt="product" />
+				{load && <Loading />}
+				<img
+					src={product.images[0]}
+					alt="product"
+					onLoad={() => setLoad(false)}
+				/>
 				<HeartFav
 					className={[
 						styles["card__image-favourite"],
