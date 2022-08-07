@@ -11,18 +11,13 @@
         padding-top: 0px;
 
         .header-links{
-            
+            @include fontNormal(17px);
             &__list{
                 column-gap: 0;
-
-                .link{
-                    @include fontNormal(17px);
-                }
             }
 
             &__sale{
                 padding: 7px 0px;
-                @include fontNormal(17px);
             }
         }
     }
@@ -33,12 +28,12 @@
     }
 
     &__sale{
+        @include fontNormal(18px);
         color: $themeColorRed;
         white-space: nowrap;
         padding: 7px 0px;
         display: flex;
         align-items: center;
-        @include fontNormal(18px);
     }
 }
 

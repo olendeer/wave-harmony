@@ -30,7 +30,8 @@
     transition-duration: .4s;
     position: relative;
     background: $buttonColor;
-    font-weight: 500;
+    @include fontMedium(20px);
+
     span{
         position: relative;
         z-index: 2;
@@ -114,6 +115,7 @@
     &--stroke-white {
         background: transparent;
         border: 1px solid $backgroundColorLight;
+        @include fontNormal(20px);
 
         &::after, &::before{
             display: none;

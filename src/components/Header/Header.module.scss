@@ -49,15 +49,12 @@
         padding-top: 30px;
 
         &__contacts{
+            @include fontNormal(18px);
             justify-self: start;
-            font: {
-                weight: 300;
-                size: 18px
-            }
             color: $textColorPlaceholder;
             span{
+                @include fontMedium(18px);
                 color: $textColorHeader;
-                @include fontNormal(18px);
             }
         }
 

@@ -3,5 +3,5 @@
 
 .header{
     color: $textColor;
-    @include fontNormal(44px)
+    @include fontMedium(44px);
 }

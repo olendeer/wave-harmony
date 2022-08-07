@@ -21,7 +21,7 @@ const HeaderLinks: FC<IHeaderLinksProps> = ({ collapse }) => {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/qwe">
 						Блог
 					</NavLink>
 				</li>

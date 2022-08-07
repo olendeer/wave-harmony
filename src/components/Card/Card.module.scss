@@ -61,6 +61,8 @@
 
         & > img{
             width: 100%;
+            height: 100%;
+            object-fit: contain;
             margin-bottom: -6px;
         }
     }
@@ -77,7 +79,7 @@
 
         &-price{
             color: $textColor;
-            @include fontBold(20px);
+            @include fontBold();
 
             &--sale{
                 color: $themeColorRed;
@@ -93,7 +95,7 @@
             }
         }
 
-        &-type{
+        &-name{
             color: $textColor;
             @include fontNormal(20px);
         }
@@ -104,7 +106,7 @@
             align-items: center;
             margin-top: 5px;
             height: 22px;
-            @include fontNormal(20px);
+            @include fontNormal(16px);
             
             & > span{
                 display: flex;

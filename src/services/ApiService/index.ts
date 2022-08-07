@@ -1,5 +1,6 @@
 import { ClientType, IApiClient, IService } from '@/models/api'
 import { TrustApi } from './TrustApi'
+import { ProductsApi } from './ProductsApi'
 import { axiosClient } from './clients'
 
 
@@ -34,7 +35,7 @@ class ApiService {
 const apiInstance = new ApiService(axiosClient)
 
 
-apiInstance.add(TrustApi)
+apiInstance.add(TrustApi).add(ProductsApi)
 
 const Api = apiInstance.service
 

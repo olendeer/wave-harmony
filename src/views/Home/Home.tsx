@@ -7,9 +7,6 @@ import Gallery from "@c/Gallery/Gallery"
 import PopularProducts from "@c/PopularProducts/PopularProducts"
 import MainSlider from "@c/MainSlider/MainSlider"
 import Trust from "@c/Trust/Trust"
-// import Card from "@/components/Card/Card"
-
-// import styles from "./Home.module.scss"
 
 const Home: FC = () => {
 	return (

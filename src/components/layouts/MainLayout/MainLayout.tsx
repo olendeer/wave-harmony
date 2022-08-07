@@ -1,15 +1,15 @@
 import { FC } from "react"
 import { IMainLayoutProps } from "./types"
 
-import Header from '@c/Header/Header'
+import Header from "@c/Header/Header"
 import Footer from "@/components/Footer/Footer"
 
-const MainLayout: FC<IMainLayoutProps> = ({children}) => {
+const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
 	return (
 		<div className="app">
-			<Header/>
+			<Header />
 			{children}
-			<Footer/>
+			<Footer />
 		</div>
 	)
 }

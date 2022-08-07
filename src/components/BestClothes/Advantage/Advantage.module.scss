@@ -8,11 +8,10 @@
     
     &__title{
         margin-bottom: 13px;
-        @include fontNormal(20px);
+        @include fontMedium(20px);
     }
 
     &__text{
         @include fontNormal(18px);
-        font-weight: 300;
     }
 }

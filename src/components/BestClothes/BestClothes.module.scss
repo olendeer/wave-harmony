@@ -19,11 +19,12 @@
 
     
     &__description{
-        grid-area: description;
         @include fontNormal(18px);
+        grid-area: description;
         font-weight: 300;
         display: grid;
         grid-template-columns: auto 1fr;
+        
         svg{
             margin-right: 17px;
             margin-top: -12px;

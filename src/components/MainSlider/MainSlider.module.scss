@@ -70,7 +70,7 @@
             width: 15px;
             height: 6px;
             border-radius: 2px;
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba($backgroundColorLight, 0.25);
             cursor: pointer;
             transition-duration: .4s;
 
@@ -105,13 +105,13 @@
             background-image: url('../../assets/svg/waves.svg');
             background-repeat: no-repeat;
             background-position: 25% 60%;
-            @include fontNormal(90px);
+            @include fontMedium(90px);
         }
 
         &-description{
             margin: 10px 0px 50px;
             color: $backgroundColorLight;
-            @include fontNormal(26px);
+            @include fontLight(26px);
         }
     }
 

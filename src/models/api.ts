@@ -1,6 +1,9 @@
+
+import { ProductsApi } from "@/services/ApiService/ProductsApi"
 import { TrustApi } from "@/services/ApiService/TrustApi"
 import { AxiosInstance } from "axios"
-import { Trust } from "./trust"
+import { ITrust } from "./trust"
+import { IProduct } from '@/models/product'
 
 
 // Тип клиента
@@ -12,21 +15,26 @@ export type ClientType = AxiosInstance
 // Интерфейсы разных сервисов
 
 export interface ITrustApi {
-    fetchTrust: () => Trust[]
+    fetchTrust: () =>  Promise<ITrust[]>
+}
+
+export interface IProductsApi {
+    fetchProducts: () => Promise<IProduct[]>
+    fetchPopularProducts: () =>  Promise<IProduct[]>
 }
 
 
 
 // Типы сервисов которые доступны к добавлению в апи
 
-export type IService = typeof TrustApi // | что-то ещё.....
+export type IService = typeof TrustApi | typeof ProductsApi // | что-то ещё.....
 
 
 
 
 // Интерфейс общего сервиса
 
-export type IApiClient = ITrustApi // & что-то ещё'
+export type IApiClient = ITrustApi & IProductsApi // & что-то ещё'
 
 
 

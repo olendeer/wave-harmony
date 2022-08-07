@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { FC, useEffect, useRef } from "react"
 import Slider from "react-slick"
 
 import ContainerLayout from "@c/layouts/ContainerLayout/ContainerLayout"
@@ -6,14 +6,25 @@ import SectionHeader from "@c/ui/SectionHeader/SectionHeader"
 import Button from "@c/ui/Button/Button"
 import Card from "@c/Card/Card"
 
+import { useActions, useAppSelector } from "@/store/hooks"
+import { popularProductsSelector } from "@/store/selectors"
+
 import { ReactComponent as Arrow } from "@/assets/svg/arrow-right.svg"
 
 import "slick-carousel/slick/slick.scss"
 import "slick-carousel/slick/slick-theme.scss"
 import styles from "./PopularProducts.module.scss"
 
-const PopularProducts = () => {
+const PopularProducts: FC = () => {
 	const slider = useRef<Slider | null>(null)
+
+	const { fetchPopularProducts } = useActions()
+
+	const products = useAppSelector(popularProductsSelector)
+
+	useEffect(() => {
+		fetchPopularProducts()
+	}, [])
 
 	return (
 		<ContainerLayout>
@@ -53,28 +64,13 @@ const PopularProducts = () => {
 						slidesToScroll={1}
 						infinite={true}
 					>
-						{Array(8)
-							.fill(true)
-							.map((item, index) => (
-								<Card
-									key={index}
-									size="small"
-									product={{
-										fav: false,
-										type: "Unity",
-										images: ["data/products/1/1.png"],
-										price: 4000,
-										sale: null,
-										sizes: [
-											"XS",
-											"S",
-											"M",
-											"L",
-											"По меркам",
-										],
-									}}
-								/>
-							))}
+						{products.map((product) => (
+							<Card
+								key={product.id}
+								size="small"
+								product={product}
+							/>
+						))}
 					</Slider>
 				</div>
 			</section>

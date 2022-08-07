@@ -1,5 +1,6 @@
-export interface Trust {
+export interface ITrust {
     id: number,
+    followers: string,
     image: string,
     name : string,
     inst_link : string,
