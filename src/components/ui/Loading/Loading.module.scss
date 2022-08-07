@@ -4,8 +4,9 @@ $size: 80px;
 
 .loading{
     display: block;
-    position: relative;
+    position: absolute;
     left: calc(50% - #{$size} / 2);
+    top: calc(50% - #{$size} / 2);
     width: $size;
     height: $size;
 

@@ -14,3 +14,7 @@ export interface ITrustSlice {
 export interface IMainSliderSlice {
     slides: IMainSlide[]
 }
+
+export interface IGallerySlice {
+    images: string[]
+}

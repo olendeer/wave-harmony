@@ -14,6 +14,7 @@
     opacity: 0;
     transition-duration: .4s;
     visibility: hidden;
+    z-index: 10;
 
     &__content{
         background-color: $backgroundColorLight;
