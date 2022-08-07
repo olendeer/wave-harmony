@@ -11,8 +11,6 @@ import { popularProductsSelector } from "@/store/selectors"
 
 import { ReactComponent as Arrow } from "@/assets/svg/arrow-right.svg"
 
-import "slick-carousel/slick/slick.scss"
-import "slick-carousel/slick/slick-theme.scss"
 import styles from "./PopularProducts.module.scss"
 
 const PopularProducts: FC = () => {
@@ -62,7 +60,7 @@ const PopularProducts: FC = () => {
 						ref={slider}
 						slidesToShow={4}
 						slidesToScroll={1}
-						infinite={true}
+						infinite
 					>
 						{products.map((product) => (
 							<Card

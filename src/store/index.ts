@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
+import mainSliderSlice from './slices/mainSliderSlice';
 import productSlice from './slices/productSlice';
 import trustSlice from './slices/trustSlice';
 
@@ -12,7 +13,8 @@ import trustSlice from './slices/trustSlice';
 const store = configureStore({
     reducer: {
         products: productSlice,
-        trust: trustSlice
+        trust: trustSlice,
+        mainSlider: mainSliderSlice
         // router: connectRouter<History>(history)
     },
     // middleware: (getDefaultMiddleware) =>  getDefaultMiddleware().concat(routerMiddleware(history))

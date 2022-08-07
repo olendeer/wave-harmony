@@ -1,4 +1,8 @@
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
+
 @import './assets/fonts/FuturaPT/stylesheet.scss';
+
 
 html, button, input, textarea{
 	font: {
@@ -26,4 +30,17 @@ ul{
 
 a{
 	text-decoration: none;
+}
+
+
+.fade-slider{
+	.slick-slide{
+		opacity: 0;
+		transition-duration: .5s;
+		transform: scale(0);
+		&.slick-active{
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
 }

@@ -183,5 +183,25 @@
                 "По меркам"
             ]
         }
+    ],
+    "main_slider" : [
+        {
+            "id": 1,
+            "images": ["data/products/1/2.png", "data/products/1/1.png"],
+            "name" : "Ocean",
+            "description": "с длинными рукавами"
+        },
+        {
+            "id": 2,
+            "images": ["data/products/2/1.png", "data/products/1/3.png"],
+            "name" : "Mandy",
+            "description": "новая модель"
+        },
+        {
+            "id": 3,
+            "images": ["data/products/5/1.png", "data/products/4/1.png"],
+            "name" : "Kiana",
+            "description": "необычный цвет"
+        }
     ]
 }
