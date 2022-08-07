@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import IconDot from "@c/ui/IconDot/IconDot"
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
@@ -39,10 +40,14 @@ const Header: FC = () => {
 						) : (
 							<>
 								<div className={styles["header-nav__contacts"]}>
-									<span>8 (800) 511 36 39 </span> — бесплатно
-									по России
+									<a href="tel:8 (800) 511 36 39">
+										8 (800) 511 36 39
+									</a>
+									— бесплатно по России
 								</div>
-								<Logo />
+								<Link to="/">
+									<Logo />
+								</Link>
 							</>
 						)}
 						<div className={styles["header-nav__buttons"]}>

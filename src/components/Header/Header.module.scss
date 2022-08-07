@@ -52,7 +52,7 @@
             @include fontNormal(18px);
             justify-self: start;
             color: $textColorPlaceholder;
-            span{
+            a{
                 @include fontMedium(18px);
                 color: $textColorHeader;
             }

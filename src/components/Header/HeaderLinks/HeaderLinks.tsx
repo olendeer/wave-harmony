@@ -16,47 +16,47 @@ const HeaderLinks: FC<IHeaderLinksProps> = ({ collapse }) => {
 		>
 			<ul className={styles["header-links__list"]}>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/catalog">
 						Каталог
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/qwe">
+					<NavLink className={styles.link} to="/blog">
 						Блог
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/about">
 						О бренде
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/sizes">
 						Размеры
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/delivery-pay">
 						Доставка и оплата
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/feedback">
 						Отзывы
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/create">
 						Создай свой купальник
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/certificates">
 						Сертификаты <Gift />{" "}
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/">
+					<NavLink className={styles.link} to="/contacts">
 						Контакты
 					</NavLink>
 				</li>
