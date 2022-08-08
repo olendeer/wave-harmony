@@ -3,6 +3,8 @@ type ProductType = 'surfing' | 'conjoint' | 'separate' | 'with_sleeves' | 'witho
 
 type SizesType = 'XS' | 'S' | 'M' | 'L' | 'По меркам'
 
+type AvailabilityType = 'stock' | 'discontinued' | 'absent'
+
 export interface IProduct {
     type: ProductType
     isNew: boolean
@@ -13,4 +15,10 @@ export interface IProduct {
     sizes: SizesType[]
     popular: boolean
     sale: number | null
+    colors: string[]
+    sunProtection: string
+    description: string
+    params: string
+    availability: AvailabilityType
+    rate: number
 }

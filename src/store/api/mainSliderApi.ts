@@ -2,7 +2,7 @@ import Api from "@/services/ApiService";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const fetchMainSlider = createAsyncThunk(
-    'products/fetchMainSlider',
+    'mainSlider/fetchMainSlider',
     async () => await Api.fetchMainSlider()
 )
 

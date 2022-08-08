@@ -20,7 +20,7 @@
         },
         {
             "id": 3,
-            "image": "data/trust/3.png",
+            "image": "data/trust/2.png",
             "name" : "Блогер 2",
             "inst_link" : "https://instagram.com/",
             "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
@@ -29,6 +29,24 @@
         },
         {
             "id": 4,
+            "image": "data/trust/3.png",
+            "name" : "Блогер 3",
+            "inst_link" : "https://instagram.com/",
+            "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+            "video_link" : "https://instagram.com/",
+            "followers" : "8,5млн."
+        },
+        {
+            "id": 5,
+            "image": "data/trust/2.png",
+            "name" : "Блогер 3",
+            "inst_link" : "https://instagram.com/",
+            "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+            "video_link" : "https://instagram.com/",
+            "followers" : "8,5млн."
+        },
+        {
+            "id": 6,
             "image": "data/trust/3.png",
             "name" : "Блогер 3",
             "inst_link" : "https://instagram.com/",
@@ -52,7 +70,12 @@
                 "S",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : true,
@@ -69,7 +92,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : false,
@@ -86,7 +114,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : true,
@@ -103,7 +136,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : false,
@@ -118,7 +156,12 @@
                 "XS",
                 "S",
                 "M"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : true,
@@ -133,7 +176,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : false,
@@ -149,7 +197,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : false,
@@ -165,7 +218,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         },
         {
             "isNew" : true,
@@ -181,7 +239,12 @@
                 "M",
                 "L",
                 "По меркам"
-            ]
+            ],
+            "sunProtection": "",
+            "description": "",
+            "params": "",
+            "availability": "",
+            "rate": ""
         }
     ],
     "main_slider" : [

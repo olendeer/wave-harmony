@@ -1,4 +1,6 @@
-import { FC, useEffect } from "react"
+import { FC, useEffect, useState } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Thumbs, Scrollbar, EffectCreative } from "swiper"
 
 import SectionHeader from "@c/ui/SectionHeader/SectionHeader"
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
@@ -10,12 +12,15 @@ import { trustSelector } from "@/store/selectors"
 import styles from "./Trust.module.scss"
 
 const Trust: FC = () => {
+	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+
 	const { fetchTrust } = useActions()
 
 	const trusts = useAppSelector(trustSelector)
 
 	useEffect(() => {
 		fetchTrust()
+		//eslint-disable-next-line
 	}, [])
 
 	return (
@@ -26,52 +31,103 @@ const Trust: FC = () => {
 					<Button mode="stroke">Больше о компании</Button>
 				</div>
 				<div className={styles.trust__body}>
-					<div className={styles.list}>
+					<Swiper
+						onSwiper={setThumbsSwiper}
+						spaceBetween={15}
+						slidesPerView={"auto"}
+						direction={"vertical"}
+						scrollbar={{ draggable: true, snapOnRelease: true }}
+						watchSlidesProgress={true}
+						modules={[Thumbs, Scrollbar]}
+						className={"swiper-trust"}
+					>
 						{trusts.map((item) => (
-							<img
-								key={item.id}
-								src={item.image}
-								alt="trust-image"
-							/>
+							<SwiperSlide key={item.id}>
+								<img
+									src={item.image}
+									className={styles["trust__slider-nav"]}
+									alt="trust bloger"
+								/>
+							</SwiperSlide>
 						))}
-					</div>
-					<div className={styles.card}>
-						<img
-							className={styles.card__image}
-							src={trusts[0]?.image}
-							alt="trust img"
-						/>
-						<div className={styles.card__info}>
-							<div className={styles["card__info-name"]}>
-								{trusts[0]?.name}
-							</div>
-							<a
-								className={styles["card__info-inst"]}
-								href={trusts[0]?.inst_link}
-								target="_blank"
-							>
-								@instagram
-							</a>
-							<span className={styles["card__info-followers"]}>
-								{trusts[0]?.followers} подписчиков
-							</span>
-							<p className={styles["card__info-description"]}>
-								{trusts[0]?.description}
-							</p>
-							<a
-								className={styles["card__info-video"]}
-								href={trusts[0]?.video_link}
-								target="_blank"
-							>
-								Смотреть видео
-							</a>
-						</div>
-						<div className={styles.card__background}>
-							<div className={styles.gradient}></div>
-							<div className={styles.gradient}></div>
-							<div className={styles.gradient}></div>
-							<div className={styles.gradient}></div>
-						</div>
+					</Swiper>
+					<Swiper
+						spaceBetween={25}
+						direction={"vertical"}
+						thumbs={{ swiper: thumbsSwiper }}
+						modules={[Thumbs, EffectCreative]}
+						effect={"creative"}
+						creativeEffect={{
+							prev: {
+								translate: [0, 0, -400],
+							},
+							next: {
+								translate: [0, "100%", 0],
+							},
+						}}
+						className="swiper-trust-slider"
+					>
+						{trusts.map((item) => (
+							<SwiperSlide key={item.id}>
+								<div className={styles.card}>
+									<img
+										className={styles.card__image}
+										src={item.image}
+										alt="trust img"
+									/>
+									<div className={styles.card__info}>
+										<div
+											className={
+												styles["card__info-name"]
+											}
+										>
+											{item.name}
+										</div>
+										<a
+											className={
+												styles["card__info-inst"]
+											}
+											href={item.inst_link}
+											target="_blank"
+											rel="noreferrer"
+										>
+											@instagram
+										</a>
+										<span
+											className={
+												styles["card__info-followers"]
+											}
+										>
+											{item.followers} подписчиков
+										</span>
+										<p
+											className={
+												styles["card__info-description"]
+											}
+										>
+											{item.description}
+										</p>
+										<a
+											className={
+												styles["card__info-video"]
+											}
+											href={item.video_link}
+											target="_blank"
+											rel="noreferrer"
+										>
+											Смотреть видео
+										</a>
+									</div>
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
+
+					<div className={styles.card__background}>
+						<div className={styles.gradient}></div>
+						<div className={styles.gradient}></div>
+						<div className={styles.gradient}></div>
+						<div className={styles.gradient}></div>
 					</div>
 				</div>
 			</section>

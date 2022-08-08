@@ -9,6 +9,7 @@
 }
 
 .trust {
+    position: relative;
 
     &__header{
         display: flex;
@@ -33,7 +34,7 @@
         &__image{
             border-radius: 40px;
             width: 100%;
-            height: 100%;
+            height: 510px;
         }
 
         &__info{
@@ -84,7 +85,8 @@
 
         &__background{
             height: 100%;
-            top: 0px;
+            width: 490px;
+            align-self: center;
             right: 0px;
             position: absolute;
             display: grid;
@@ -95,26 +97,11 @@
     }
 }
 
-.list{
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
+.trust__slider{
 
-    &::-webkit-scrollbar{
-        width: 8px;
-        background: $borderPopup;
-        border-radius: 10px;
-
-        &-thumb{
-            background: $borderInput;
-            border-radius: 10px;
-        }
-    }
-
-    & > img{
-        width: 150px;
-        height: 140px;
-        margin-bottom: 15px;
+    &-nav{
+        width: 100%;
+        height: 100%;
         border-radius: 40px;
         cursor: pointer;
     }

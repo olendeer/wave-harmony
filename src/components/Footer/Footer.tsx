@@ -11,6 +11,9 @@ import { ReactComponent as Fb } from "@/assets/svg/social/fb.svg"
 import { ReactComponent as Wa } from "@/assets/svg/social/wa.svg"
 import { ReactComponent as In } from "@/assets/svg/social/in.svg"
 
+import { ReactComponent as Delivery } from "@/assets/svg/delivery.svg"
+import { ReactComponent as Certificate } from "@/assets/svg/certificate.svg"
+
 import styles from "./Footer.module.scss"
 
 const Footer: FC = () => {
@@ -34,16 +37,22 @@ const Footer: FC = () => {
 						Размеры
 					</Link>
 					<Link className={styles.footer__link} to="/">
-						Доставка и оплата
+						Доставка и оплата <Delivery />
 					</Link>
 					<Link className={styles.footer__link} to="/">
 						Контакты
 					</Link>
 					<Link className={styles.footer__link} to="/">
-						Подарочные сертификаты
+						Подарочные сертификаты <Certificate />
 					</Link>
-					<Link className={styles.footer__link} to="/">
-						Распродажа -40%s
+					<Link
+						className={[
+							styles.footer__link,
+							styles["footer__link--red"],
+						].join(" ")}
+						to="/"
+					>
+						Распродажа -40%
 					</Link>
 				</FooterColumn>
 				<FooterColumn title="Категории товаров" columns={2}>
