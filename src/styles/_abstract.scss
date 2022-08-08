@@ -19,3 +19,12 @@
         color: darken($systemIconsColor, 20%);
     }
 }
+
+%iconHover{
+    color: transparent;
+    transition-duration: .2s;
+
+    &:hover{
+        color: $textColor;
+    }
+}
