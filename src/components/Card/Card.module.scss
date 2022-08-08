@@ -1,5 +1,6 @@
 @import '@/styles/_variables';
 @import '@/styles/_mixins';
+@import '@/styles/_abstract';
 
 
 .card{
@@ -43,14 +44,9 @@
             width: 24px;
             height: 20px;
             cursor: pointer;
-            color: transparent;
-            transition-duration: .2s;
+            @extend %iconHover;
 
             &--active{
-                color: $textColor;
-            }
-
-            &:hover{
                 color: $textColor;
             }
         }
