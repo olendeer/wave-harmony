@@ -2,7 +2,7 @@ import Api from "@/services/ApiService";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const fetchGallery = createAsyncThunk(
-    'products/fetchGallery',
+    'gallery/fetchGallery',
     async () => await Api.fetchGallery()
 )
 

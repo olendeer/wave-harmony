@@ -1,6 +1,7 @@
 import { IProduct } from "@/models/product";
 import { ITrust } from "@/models/trust";
 import { IMainSlide } from "@/models/mainSlide";
+import { Lang, Theme } from "@/shared/types";
 
 export interface IProductSlice {
     products: IProduct[]
@@ -17,4 +18,9 @@ export interface IMainSliderSlice {
 
 export interface IGallerySlice {
     images: string[]
+}
+
+export interface IAppSlice {
+    theme: Theme
+    lang: Lang
 }

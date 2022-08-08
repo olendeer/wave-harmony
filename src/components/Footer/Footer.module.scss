@@ -9,7 +9,17 @@
     &__link{
         margin-bottom: 10px;
         color: $textColorSecond;
-        @include fontNormal(16px)
+        display: flex;
+        align-items: center;
+        @include fontNormal(16px);
+
+        &--red{
+            color: $themeColorRed;
+        }
+
+        svg{
+            margin-left: 8px;
+        }
     }
 
     &__email{

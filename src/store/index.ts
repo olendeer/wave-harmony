@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
+import appSlice from './slices/appSlice';
 import gallerySlice from './slices/gallerySlice';
 import mainSliderSlice from './slices/mainSliderSlice';
 import productSlice from './slices/productSlice';
@@ -16,7 +17,8 @@ const store = configureStore({
         products: productSlice,
         trust: trustSlice,
         mainSlider: mainSliderSlice,
-        gallery: gallerySlice
+        gallery: gallerySlice,
+        app: appSlice
         // router: connectRouter<History>(history)
     },
     // middleware: (getDefaultMiddleware) =>  getDefaultMiddleware().concat(routerMiddleware(history))
