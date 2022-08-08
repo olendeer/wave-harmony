@@ -7,9 +7,6 @@ import { mainSliderSelector } from "@/store/selectors"
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import Button from "@c/ui/Button/Button"
 
-import P1 from "@/assets/png/banner/1/1.png"
-import P2 from "@/assets/png/banner/1/2.png"
-
 import styles from "./MainSlider.module.scss"
 
 const MainSlider: FC = () => {
@@ -32,6 +29,7 @@ const MainSlider: FC = () => {
 
 	useEffect(() => {
 		fetchMainSlider()
+		//eslint-disable-next-line
 	}, [])
 
 	return (

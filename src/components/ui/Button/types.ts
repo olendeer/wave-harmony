@@ -7,5 +7,4 @@ export interface IButtonProps{
     padding?: string,
     className?: string
     onClick?: () => void
-    ref?: any
 }

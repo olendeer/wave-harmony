@@ -1,8 +1,7 @@
 import { ChildrenProp } from "@/shared/types";
-import { JSXElementConstructor, ReactElement } from "react";
 
 export interface IIconDotProps {
-    icon: ReactElement<any, string | JSXElementConstructor<any>>
+    icon: ChildrenProp
     dot: boolean
     pt?: number
     children?: ChildrenProp

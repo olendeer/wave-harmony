@@ -1,5 +1,5 @@
-import { ChangeInput } from "@/shared/types"
 import { useState } from "react"
+import { ChangeInput } from "@/shared/types"
 
 export const useInput = (defaultValue: string) => {
 
@@ -7,8 +7,11 @@ export const useInput = (defaultValue: string) => {
 
     const onChange: ChangeInput = event => setValue(event.target.value)
 
+    const clear = () => setValue('')
+
     return {
         value,
+        clear,
         bind: {
             value,
             onChange

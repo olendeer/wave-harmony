@@ -1,5 +1,5 @@
 import { IIconDotProps } from "./types"
-import React, { FC } from "react"
+import { FC } from "react"
 
 import styles from "./IconDot.module.scss"
 
@@ -9,15 +9,13 @@ const IconDot: FC<IIconDotProps> = ({
 	pt,
 	children,
 	className = "",
-	onClick = null,
 }) => {
 	return (
 		<div
 			className={[styles.icon, className].join(" ")}
 			style={{ paddingTop: pt + "px" }}
 		>
-			{onClick ? React.cloneElement(icon, { onClick }) : icon}{" "}
-			{dot && <span></span>} {children}
+			{icon} {dot && <span></span>} {children}
 		</div>
 	)
 }

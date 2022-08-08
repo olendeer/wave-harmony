@@ -1,9 +1,13 @@
-import { FC, useCallback, useEffect, useState } from "react"
+import { FC, FormEvent, useCallback, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 import IconDot from "@c/ui/IconDot/IconDot"
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import HeaderLinks from "./HeaderLinks/HeaderLinks"
+
+import { stopPropagation } from "@/utilites/stopPropagation"
+import { useInput } from "@/hooks/useInput"
+import { useOutClick } from "@/hooks/useOutClick"
 
 import { ReactComponent as Logo } from "@/assets/svg/logo.svg"
 import { ReactComponent as Cart } from "@/assets/svg/cart.svg"
@@ -12,30 +16,29 @@ import { ReactComponent as Search } from "@/assets/svg/search.svg"
 import { ReactComponent as User } from "@/assets/svg/user.svg"
 
 import styles from "./Header.module.scss"
-import { stopPropagation } from "@/utilites/stopPropagation"
 
 const Header: FC = () => {
 	const [collapse, setCollapse] = useState<boolean>(true)
 	const [searchCollapse, setSearchCollapse] = useState<boolean>(false)
 
-	const [search, setSearch] = useState("")
+	useOutClick(searchCollapse, setSearchCollapse)
 
-	const closeHandler = () => setSearchCollapse(false)
-
-	useEffect(() => {
-		setTimeout(() => document.addEventListener("click", closeHandler))
-		return () => document.removeEventListener("click", closeHandler)
-		//eslint-disable-next-line
-	}, [searchCollapse])
+	const search = useInput("")
 
 	const searchHandler = useCallback(() => {
 		if (!searchCollapse) {
 			setSearchCollapse(true)
 		} else {
-			console.log(search)
-			setSearch("")
+			console.log(search.value) // dispatch search
+			search.clear()
 		}
 	}, [searchCollapse, search])
+
+	const searchSubmitHandler = (event: FormEvent) => {
+		event.preventDefault()
+		searchHandler()
+		setSearchCollapse(false)
+	}
 
 	const scrollHandler = () => setCollapse(window.scrollY > 150 ? true : false)
 
@@ -73,9 +76,8 @@ const Header: FC = () => {
 						)}
 						<div className={styles["header-nav__buttons"]}>
 							<IconDot
-								icon={<Search />}
+								icon={<Search onClick={searchHandler} />}
 								dot={false}
-								onClick={searchHandler}
 							>
 								<form
 									onClick={stopPropagation}
@@ -85,27 +87,21 @@ const Header: FC = () => {
 											? styles["search--active"]
 											: "",
 									].join(" ")}
-									onSubmit={(event) => {
-										event.preventDefault()
-										searchHandler()
-										setSearch("")
-										setSearchCollapse(false)
-									}}
+									onSubmit={searchSubmitHandler}
 								>
 									<input
 										type="text"
 										className={styles.search__input}
 										placeholder={"Я ищу..."}
-										value={search}
-										onChange={(event) =>
-											setSearch(event.target.value)
-										}
+										{...search.bind}
 									/>
 								</form>
 							</IconDot>
 							<IconDot icon={<User />} dot={false} />
 							<IconDot
-								icon={<Heart className={styles.icon} />}
+								icon={
+									<Heart className={styles["icon-heart"]} />
+								}
 								dot={true}
 								pt={4}
 							/>

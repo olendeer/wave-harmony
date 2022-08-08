@@ -22,6 +22,7 @@ const PopularProducts: FC = () => {
 
 	useEffect(() => {
 		fetchPopularProducts()
+		//eslint-disable-next-line
 	}, [])
 
 	return (
