@@ -50,3 +50,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin autorizationModal{
+    display: grid;
+    width: 335px;
+
+    &__header{
+        color: $textColor;
+        margin-bottom: 5px;
+        @include fontMedium(24px);
+    }
+
+    &__or{
+        color: $textColorSecond;
+        margin-bottom: 30px;
+        @include fontNormal(18px);
+        @content
+    }
+}

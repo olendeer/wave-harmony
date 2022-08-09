@@ -2,25 +2,12 @@
 @import '@/styles/_mixins';
 
 .modal{
-    display: grid;
-
-    &__header{
-        color: $textColor;
-        margin-bottom: 5px;
-        @include fontMedium(24px);
-    }
-
-    &__or{
-        color: $textColorSecond;
-        margin-bottom: 30px;
-        @include fontNormal(18px);
-        
+    @include autorizationModal{
         span{
             cursor: pointer;
             @include gradientText($buttonColor);
         }
-    }
-    
+    };
 }
 
 .form{
@@ -44,7 +31,8 @@
     &__remind{
         justify-self: end;
         margin-top: 5px;
-        @include gradientText($buttonColor);
         cursor: pointer;
+
+        @include gradientText($buttonColor);
     }
 }

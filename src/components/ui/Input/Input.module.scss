@@ -27,7 +27,11 @@
 
     &--error{
         background: $themeColorRed;
+        &::after{
+            opacity: 0;
+        }
     }
+    
 
     &__field{
         display: flex;

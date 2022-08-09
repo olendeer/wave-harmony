@@ -15,6 +15,8 @@ export const langSelector = (state: RootState) => state.app.lang
 
 // modals 
 export const authModalSelector = (state: RootState) => state.modal.auth
+export const registerModalSelector = (state: RootState) => state.modal.register
+export const remindModalSelector = (state: RootState) => state.modal.remind
 
 
 

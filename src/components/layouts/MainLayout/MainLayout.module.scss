@@ -1,5 +1,9 @@
 @import '@/styles/_variables';
 
+.app{
+    min-height: 100vh;
+}
+
 .theme--dark{
     background-color: $backgroundColorDark;
 }

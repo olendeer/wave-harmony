@@ -1,0 +1,14 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.modal{
+    @include autorizationModal;
+}
+
+.form{
+    display: grid;
+    
+    &__input{
+        margin-bottom: 15px;
+    }
+}

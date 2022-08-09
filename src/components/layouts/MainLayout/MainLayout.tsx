@@ -5,6 +5,10 @@ import { useTheme } from "@/hooks/useTheme"
 import Header from "@c/Header/Header"
 import Footer from "@c/Footer/Footer"
 
+import ThemeButton from "@c/ui/ThemeButton/ThemeButton"
+import LangButton from "@c/ui/LangButton/LangButton"
+import ModalsList from "@c/ModalsList/ModalsList"
+
 import styles from "./MainLayout.module.scss"
 
 const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
@@ -15,6 +19,10 @@ const MainLayout: FC<IMainLayoutProps> = ({ children }) => {
 			<Header />
 			{children}
 			<Footer />
+
+			<ThemeButton />
+			<LangButton />
+			<ModalsList />
 		</div>
 	)
 }
