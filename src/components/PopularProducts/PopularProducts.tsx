@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react"
+import { FC, useRef } from "react"
 import Slider from "react-slick"
 
 import ContainerLayout from "@c/layouts/ContainerLayout/ContainerLayout"
@@ -6,8 +6,10 @@ import SectionHeader from "@c/ui/SectionHeader/SectionHeader"
 import Button from "@c/ui/Button/Button"
 import Card from "@c/Card/Card"
 
-import { useActions, useAppSelector } from "@/store/hooks"
+import { useActions } from "@/store/hooks"
 import { popularProductsSelector } from "@/store/selectors"
+import { useData } from "@/hooks/useData"
+import { IProduct } from "@/models/product"
 
 import { ReactComponent as Arrow } from "@/assets/svg/arrow-right.svg"
 
@@ -18,12 +20,10 @@ const PopularProducts: FC = () => {
 
 	const { fetchPopularProducts } = useActions()
 
-	const products = useAppSelector(popularProductsSelector)
-
-	useEffect(() => {
-		fetchPopularProducts()
-		//eslint-disable-next-line
-	}, [])
+	const products = useData<IProduct[]>(
+		fetchPopularProducts,
+		popularProductsSelector
+	)
 
 	return (
 		<ContainerLayout>

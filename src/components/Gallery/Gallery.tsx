@@ -1,25 +1,24 @@
-import { FC, useState, useEffect } from "react"
+import { FC, useState, useEffect, useCallback, useRef } from "react"
 
 import ContainerLayout from "@c/layouts/ContainerLayout/ContainerLayout"
 import Button from "@c/ui/Button/Button"
 import Modal from "@c/ui/Modal/Modal"
+import Loading from "@c/ui/Loading/Loading"
 import SectionHeader from "@c/ui/SectionHeader/SectionHeader"
 
 import { useModal } from "@/hooks/useModal"
-import { useActions, useAppSelector } from "@/store/hooks"
+import { useData } from "@/hooks/useData"
+import { useActions } from "@/store/hooks"
 import { gallerySelector } from "@/store/selectors"
 
 import styles from "./Gallery.module.scss"
-import { useCallback } from "react"
-import Loading from "@c/ui/Loading/Loading"
-import { useRef } from "react"
 
 const Gallery: FC = () => {
 	const modal = useModal()
 
 	const { fetchGallery } = useActions()
 
-	const gallery = useAppSelector(gallerySelector)
+	const gallery = useData<string[]>(fetchGallery, gallerySelector)
 
 	const [image, setImage] = useState<string>("")
 	const [load, setLoad] = useState<boolean>(false)
@@ -38,11 +37,6 @@ const Gallery: FC = () => {
 	useEffect(() => {
 		if (load && imageRef.current?.complete) setLoad(false)
 	}, [load])
-
-	useEffect(() => {
-		fetchGallery()
-		// eslint-disable-next-line
-	}, [])
 
 	return (
 		<ContainerLayout>

@@ -1,3 +1,5 @@
+import { RootState } from "@/store";
+import { AsyncThunkAction } from "@reduxjs/toolkit";
 import { ChangeEvent, Dispatch, ReactElement, ReactNode, SetStateAction } from "react";
 
 export type ChildrenProp = ReactElement | ReactElement[] | string | string[] | JSX.Element | ReactNode
@@ -13,3 +15,6 @@ export type UseOutClickHandlerType = Dispatch<SetStateAction<boolean>> | ((value
 
 export type Lang = 'ru' | 'en'
 export type Theme = 'light' | 'dark'
+
+export type SelectorType<T> = (state: RootState) => T
+export type DataActionType<T> = () => AsyncThunkAction<T, void, {}>

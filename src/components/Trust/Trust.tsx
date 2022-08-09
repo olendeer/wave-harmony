@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react"
+import { FC, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Thumbs, Scrollbar, EffectCreative } from "swiper"
 
@@ -6,8 +6,10 @@ import SectionHeader from "@c/ui/SectionHeader/SectionHeader"
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import Button from "@c/ui/Button/Button"
 
-import { useActions, useAppSelector } from "@/store/hooks"
+import { useActions } from "@/store/hooks"
 import { trustSelector } from "@/store/selectors"
+import { useData } from "@/hooks/useData"
+import { ITrust } from "@/models/trust"
 
 import styles from "./Trust.module.scss"
 
@@ -16,12 +18,7 @@ const Trust: FC = () => {
 
 	const { fetchTrust } = useActions()
 
-	const trusts = useAppSelector(trustSelector)
-
-	useEffect(() => {
-		fetchTrust()
-		//eslint-disable-next-line
-	}, [])
+	const trusts = useData<ITrust[]>(fetchTrust, trustSelector)
 
 	return (
 		<FullWidthLayout className={styles.wrapper}>

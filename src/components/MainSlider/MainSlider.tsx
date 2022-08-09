@@ -1,8 +1,10 @@
-import { FC, useRef, useState, useEffect } from "react"
+import { FC, useRef, useState } from "react"
 import Slider from "react-slick"
 
-import { useActions, useAppSelector } from "@/store/hooks"
+import { useActions } from "@/store/hooks"
 import { mainSliderSelector } from "@/store/selectors"
+import { useData } from "@/hooks/useData"
+import { IMainSlide } from "@/models/mainSlide"
 
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import Button from "@c/ui/Button/Button"
@@ -16,7 +18,7 @@ const MainSlider: FC = () => {
 
 	const { fetchMainSlider } = useActions()
 
-	const slides = useAppSelector(mainSliderSelector)
+	const slides = useData<IMainSlide[]>(fetchMainSlider, mainSliderSelector)
 
 	const changedSlide = (index: number) => {
 		setSlide(index)
@@ -26,11 +28,6 @@ const MainSlider: FC = () => {
 	const changingSlide = () => setIsChangingSlide(true)
 
 	const changeSlide = (index: number) => slider.current?.slickGoTo(index)
-
-	useEffect(() => {
-		fetchMainSlider()
-		//eslint-disable-next-line
-	}, [])
 
 	return (
 		<FullWidthLayout className={styles.wrapper}>
