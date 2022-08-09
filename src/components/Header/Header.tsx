@@ -6,8 +6,10 @@ import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import HeaderLinks from "./HeaderLinks/HeaderLinks"
 
 import { stopPropagation } from "@/utilites/stopPropagation"
+import { useActions } from "@/store/hooks"
 import { useInput } from "@/hooks/useInput"
 import { useOutClick } from "@/hooks/useOutClick"
+import { useTheme } from "@/hooks/useTheme"
 
 import { ReactComponent as Logo } from "@/assets/svg/logo.svg"
 import { ReactComponent as Cart } from "@/assets/svg/cart.svg"
@@ -23,7 +25,11 @@ const Header: FC = () => {
 
 	useOutClick(searchCollapse, setSearchCollapse)
 
+	const theme = useTheme()
+
 	const search = useInput("")
+
+	const { changeOpenAuth } = useActions()
 
 	const searchHandler = useCallback(() => {
 		if (!searchCollapse) {
@@ -56,6 +62,7 @@ const Header: FC = () => {
 					className={[
 						styles.header,
 						collapse ? styles["header--collapse"] : "",
+						styles[theme],
 					].join(" ")}
 				>
 					<div className={styles["header-nav"]}>
@@ -97,7 +104,14 @@ const Header: FC = () => {
 									/>
 								</form>
 							</IconDot>
-							<IconDot icon={<User />} dot={false} />
+							<IconDot
+								icon={
+									<User
+										onClick={() => changeOpenAuth(true)}
+									/>
+								}
+								dot={false}
+							/>
 							<IconDot
 								icon={
 									<Heart className={styles["icon-heart"]} />

@@ -1,0 +1,50 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.modal{
+    display: grid;
+
+    &__header{
+        color: $textColor;
+        margin-bottom: 5px;
+        @include fontMedium(24px);
+    }
+
+    &__or{
+        color: $textColorSecond;
+        margin-bottom: 30px;
+        @include fontNormal(18px);
+        
+        span{
+            cursor: pointer;
+            @include gradientText($buttonColor);
+        }
+    }
+    
+}
+
+.form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__input{
+        margin-bottom: 15px;
+        grid-column: span 2;
+    }
+
+    &__button{
+        grid-column: span 2;
+        margin-top: 20px;
+    }
+
+    &__checkbox{
+        margin-top: 5px;
+    }
+
+    &__remind{
+        justify-self: end;
+        margin-top: 5px;
+        @include gradientText($buttonColor);
+        cursor: pointer;
+    }
+}

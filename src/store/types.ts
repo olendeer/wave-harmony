@@ -24,3 +24,9 @@ export interface IAppSlice {
     theme: Theme
     lang: Lang
 }
+
+export interface IModalSlice{
+    auth: boolean
+    register: boolean
+    remind: boolean
+}

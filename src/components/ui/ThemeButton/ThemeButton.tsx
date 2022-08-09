@@ -15,7 +15,7 @@ const ThemeButton: FC = () => {
 			<input
 				type="checkbox"
 				id="theme-btn"
-				checked={theme === "dark"}
+				checked={theme === "theme--dark"}
 				onChange={() => changeTheme()}
 			/>
 			<label htmlFor="theme-btn" className={styles.toggle}>

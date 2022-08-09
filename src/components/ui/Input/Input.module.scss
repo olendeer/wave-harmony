@@ -25,6 +25,10 @@
         }
     }
 
+    &--error{
+        background: $themeColorRed;
+    }
+
     &__field{
         display: flex;
         align-items: center;
@@ -37,10 +41,14 @@
 
     &__target{
         @include fontNormal(16px);
-        margin-right: 15px;
         height: 100%;
         flex: 1 0 0;
         color: $textColor;
+
+        &[data-icon="true"]{
+            margin-right: 30px;
+        }
+        
     }
 
     &__label{
@@ -80,5 +88,11 @@
                 opacity: 1;
             }
         }
+    }
+}
+
+.icon--hide{
+    path:last-child{
+        display: none;
     }
 }

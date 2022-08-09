@@ -33,6 +33,23 @@
     display: grid;
     grid-template: 80px 110px / 1fr;
 
+    &.theme--dark{
+        .header-nav{
+            &__contacts{
+                a{
+                    color: $textColorHeaderDark;
+                    &:hover{
+                        @include gradientText($buttonColorDark);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .search input{
+            background: $backgroundColorDark;
+        }
+    }
+
     &--collapse{
        grid-template-rows: 80px;
        

@@ -22,11 +22,11 @@ const Modal: FC<IModalProps> = ({
 			className={[styles.modal, isOpen ? styles["modal--open"] : ""].join(
 				" "
 			)}
-			onClick={closeHandler}
+			onMouseDown={closeHandler}
 		>
 			<div
 				className={[styles.modal__content, className].join(" ")}
-				onClick={stopPropagation}
+				onMouseDown={stopPropagation}
 			>
 				{children}
 				<Close onClick={closeHandler} />

@@ -3,6 +3,7 @@ import * as trustActions from './api/trustApi'
 import * as mainSliderActions from './api/mainSliderApi'
 import * as galleryActions from './api/galleryApi'
 import * as appActions from './slices/appSlice'
+import * as modalActions from './slices/modalSlice'
 import * as appActionsAsync from './api/appApi'
 
 
@@ -12,7 +13,8 @@ const actions = {
     ...mainSliderActions,
     ...galleryActions,
     ...appActions.actions,
-    ...appActionsAsync
+    ...appActionsAsync,
+    ...modalActions.actions
 
 }
 

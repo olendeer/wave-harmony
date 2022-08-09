@@ -1,0 +1,46 @@
+@import '@/styles/_variables';
+
+.checkbox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $textColor;
+    cursor: pointer;
+    user-select: none;
+
+    input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkbox__mark {
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__mark{
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        border: 1px solid $borderInput;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $buttonColor;
+            opacity: 0;
+            transition-duration: .2s;
+        }
+    }
+}

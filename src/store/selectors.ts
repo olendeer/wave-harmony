@@ -10,7 +10,12 @@ export const mainSliderSelector = (state: RootState) => state.mainSlider.slides
 
 export const gallerySelector = (state: RootState) => state.gallery.images
 
-export const themeSelector = (state: RootState) => state.app.theme
+export const themeSelector = (state: RootState) => 'theme--' + state.app.theme
 export const langSelector = (state: RootState) => state.app.lang
+
+// modals 
+export const authModalSelector = (state: RootState) => state.modal.auth
+
+
 
 

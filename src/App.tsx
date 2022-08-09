@@ -2,11 +2,13 @@ import { FC } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Provider } from "react-redux"
 
+import ThemeButton from "@c/ui/ThemeButton/ThemeButton"
+import LangButton from "@c/ui/LangButton/LangButton"
+import ModalsList from "@c/ModalsList/ModalsList"
+
 import Home from "./views/Home/Home"
 
 import store from "./store"
-import ThemeButton from "@c/ui/ThemeButton/ThemeButton"
-import LangButton from "@c/ui/LangButton/LangButton"
 
 const App: FC = () => {
 	return (
@@ -19,6 +21,7 @@ const App: FC = () => {
 
 			<ThemeButton />
 			<LangButton />
+			<ModalsList />
 		</Provider>
 	)
 }

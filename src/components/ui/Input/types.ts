@@ -10,4 +10,6 @@ export interface IInputProps{
     onChange: ChangeInput
     icon?: ReactElement,
     height?: string
+    className?: string
+    error?: boolean
 }
