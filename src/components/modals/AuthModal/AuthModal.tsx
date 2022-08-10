@@ -17,6 +17,11 @@ import { ReactComponent as Eye } from "@/assets/svg/eye.svg"
 import styles from "./AuthModal.module.scss"
 
 const AuthModal: FC = () => {
+	const auth = useAppSelector(authModalSelector)
+
+	const { changeOpenAuth, changeOpenRegister, changeOpenRemind, authUser } =
+		useActions()
+
 	const { errors, fields, reset, handleSubmit } = useAppForm<IAuthForm>([
 		{
 			name: "email",
@@ -34,15 +39,10 @@ const AuthModal: FC = () => {
 		},
 	])
 
-	const onSubmit = handleSubmit((data) => {
-		console.log(data)
+	const onSubmit = handleSubmit(async (data) => {
+		await authUser(data)
 		reset()
 	})
-
-	const auth = useAppSelector(authModalSelector)
-
-	const { changeOpenAuth, changeOpenRegister, changeOpenRemind } =
-		useActions()
 
 	return (
 		<Modal changeOpen={changeOpenAuth} isOpen={auth}>

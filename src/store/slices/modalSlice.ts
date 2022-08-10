@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { authUser, registerUser } from '../api/userApi'
 import { IModalSlice } from '../types'
 
 
@@ -27,6 +28,21 @@ const modalSlice = createSlice({
             state.register = false
             state.auth = false
         }
+    },
+    extraReducers(builder) {
+        builder
+        .addCase(authUser.fulfilled, (state) => {
+            state.auth = false
+        })
+        .addCase(authUser.rejected, (state) => {
+            state.auth = false
+        })
+        .addCase(registerUser.fulfilled, (state) => {
+            state.register = false
+        })
+        .addCase(registerUser.rejected, (state) => {
+            state.register = false
+        })
     },
 })
 
