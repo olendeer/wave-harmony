@@ -12,4 +12,5 @@ export interface IInputProps{
     height?: string
     className?: string
     error?: boolean
+    name?: string
 }

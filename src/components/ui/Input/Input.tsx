@@ -15,6 +15,7 @@ const Input: FC<IInputProps> = memo(
 		className,
 		error,
 		type = "text",
+		name,
 	}) => {
 		const [focus, setFocus] = useState<boolean>(false)
 		const [visible, setVisible] = useState<boolean>(false)
@@ -51,6 +52,7 @@ const Input: FC<IInputProps> = memo(
 						value={value}
 						onChange={onChange}
 						data-icon={!!icon}
+						name={name}
 						type={
 							type === "password"
 								? visible

@@ -4,5 +4,7 @@ export interface ICheckbox{
     className? : string
     title: string
     checked: boolean
-    onChange: () => void
+    value?: string | boolean
+    // onChange: () => void
+    onChange: any
 }

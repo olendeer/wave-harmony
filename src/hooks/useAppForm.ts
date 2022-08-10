@@ -1,51 +1,34 @@
 /* eslint  react-hooks/rules-of-hooks: 0 */
 
-import { IAppFormField, IAppFormFieldsReturn, IAppFormReturn } from "@/models/forms"
-import { useController, useForm } from "react-hook-form"
+import { IAppFormField, IAppFormFieldsReturn, IAppFormReturn, IAuthForm } from "@/models/forms"
+import { DeepRequired, FieldErrorsImpl, useController, UseControllerProps, useForm } from "react-hook-form"
 
-export function useAppForm<T>(fields : IAppFormField[]) : IAppFormReturn<T>  {
+export function useAppForm<T extends IAppFormFieldsReturn>(fields : IAppFormField[]) : IAppFormReturn<T>  {
     const defaultValues = Object.fromEntries(fields.map(item => ([ item.name, item.default ])))
-
     const { formState: { errors },
     handleSubmit, reset, control } = useForm({ defaultValues: defaultValues })
 
-    const formFields = {} as T
-
-    // formFields
+    const formFields: T = {} as T
 
     for(let i = 0; i < fields.length; i++) {
-        const { name, onChange, value } = useController({ control, name: fields[i].name, rules: fields[i].rules }).field
-        formFields[fields[i].name] = {name, onChange, value}
+
+        const fieldSetting = { control, name: fields[i].name } as UseControllerProps<{ [k: string]: string | boolean | undefined; }, string>
+        if(fields[i].rules){
+            fieldSetting.rules = fields[i].rules
+        }
+
+        const { name, onChange, value } = useController(fieldSetting).field
+        
+        const key: keyof T = fields[i].name as keyof T
+        
+        formFields[key] = { name, onChange, value } as T[keyof T]
     }
 
 
     return {
         fields: formFields,
-        errors,
+        errors: errors as FieldErrorsImpl<DeepRequired<T>>,
         handleSubmit,
         reset
     }
 }
-
-// export const useAppForm: IAppForm<T> = (fields) => {
-
-//     const defaultValues = Object.fromEntries(fields.map(item => ([ item.name, item.default ])))
-
-//     const { formState: { errors },
-//     handleSubmit, reset, control } = useForm({ defaultValues: defaultValues })
-
-//     const formFields = {} as T
-
-//     for(let i = 0; i < fields.length; i++) {
-//         const { name, onChange, value } = useController({ control, name: fields[i].name, rules: fields[i].rules }).field
-//         formFields[fields[i].name] = {name, onChange, value}
-//     }
-
-
-//     return {
-//         fields: formFields,
-//         errors,
-//         handleSubmit,
-//         reset
-//     }
-// }

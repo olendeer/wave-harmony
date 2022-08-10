@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react"
+import { FC } from "react"
 
 import Modal from "@c/ui/Modal/Modal"
 import Button from "@c/ui/Button/Button"
@@ -7,28 +7,55 @@ import Checkbox from "@c/ui/Checkbox/Checkbox"
 
 import { useActions, useAppSelector } from "@/store/hooks"
 import { registerModalSelector } from "@/store/selectors"
-import { useInput } from "@/hooks/useInput"
+import { useAppForm } from "@/hooks/useAppForm"
+import { IRegisterForm } from "@/models/forms"
+import { ValidationUtil } from "@/utilites/validationUtil"
 
 import { ReactComponent as Eye } from "@/assets/svg/eye.svg"
 
 import styles from "./RegisterModal.module.scss"
 
 const RegisterModal: FC = () => {
-	const [subscribe, setSubscribe] = useState<boolean>(false)
-
-	const changeSubscribe = useCallback(() => {
-		setSubscribe((prev) => !prev)
-	}, [])
-
 	const register = useAppSelector(registerModalSelector)
 
 	const { changeOpenAuth, changeOpenRegister } = useActions()
 
-	const name = useInput("")
-	const sirname = useInput("")
-	const email = useInput("")
-	const phone = useInput("")
-	const password = useInput("")
+	const { errors, fields, reset, handleSubmit } = useAppForm<IRegisterForm>([
+		{
+			name: "name",
+			rules: { required: true, minLength: 2 },
+			default: "",
+		},
+		{
+			name: "sirname",
+			rules: { required: true, minLength: 2 },
+			default: "",
+		},
+		{
+			name: "email",
+			rules: { required: true, pattern: ValidationUtil.email },
+			default: "",
+		},
+		{
+			name: "phone",
+			rules: { required: true, pattern: ValidationUtil.phone },
+			default: "",
+		},
+		{
+			name: "password",
+			rules: { required: true, minLength: 8, maxLength: 32 },
+			default: "",
+		},
+		{
+			name: "subscribe",
+			default: false,
+		},
+	])
+
+	const onSubmit = handleSubmit((data) => {
+		console.log(data)
+		reset()
+	})
 
 	return (
 		<Modal changeOpen={changeOpenRegister} isOpen={register}>
@@ -41,34 +68,38 @@ const RegisterModal: FC = () => {
 					</span>
 				</p>
 
-				<form className={styles.form}>
+				<form className={styles.form} onSubmit={onSubmit}>
 					<Input
 						type="text"
 						require={true}
 						placeholder="Имя"
 						className={styles.form__input}
-						{...name.bind}
+						{...fields.name}
+						error={!!errors.name}
 					/>
 					<Input
 						type="text"
 						require={true}
 						placeholder="Фамилия"
 						className={styles.form__input}
-						{...sirname.bind}
+						{...fields.sirname}
+						error={!!errors.sirname}
 					/>
 					<Input
 						type="text"
 						require={true}
-						placeholder="E-mail или телефон"
+						placeholder="E-mail"
 						className={styles.form__input}
-						{...email.bind}
+						{...fields.email}
+						error={!!errors.email}
 					/>
 					<Input
 						type="text"
 						require={true}
 						placeholder="Tелефон"
 						className={styles.form__input}
-						{...phone.bind}
+						{...fields.phone}
+						error={!!errors.phone}
 					/>
 					<Input
 						type="password"
@@ -76,13 +107,14 @@ const RegisterModal: FC = () => {
 						placeholder="Пароль"
 						className={styles.form__input}
 						icon={<Eye />}
-						{...password.bind}
+						{...fields.password}
+						error={!!errors.password}
 					/>
 					<Checkbox
 						className={styles.form__checkbox}
 						title={"Подписаться на новинки и акции"}
-						checked={subscribe}
-						onChange={changeSubscribe}
+						checked={fields.subscribe.value}
+						onChange={fields.subscribe.onChange}
 					/>
 					<Button className={styles.form__button}>
 						Создать аккаунт

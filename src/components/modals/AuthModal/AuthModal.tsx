@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react"
+import { FC } from "react"
 
 import Modal from "@c/ui/Modal/Modal"
 import Button from "@c/ui/Button/Button"
@@ -8,25 +8,19 @@ import Checkbox from "@c/ui/Checkbox/Checkbox"
 import { useAppForm } from "@/hooks/useAppForm"
 import { useActions, useAppSelector } from "@/store/hooks"
 import { authModalSelector } from "@/store/selectors"
+import { IAuthForm } from "@/models/forms"
 
 import { ValidationUtil } from "@/utilites/validationUtil"
 
 import { ReactComponent as Eye } from "@/assets/svg/eye.svg"
 
 import styles from "./AuthModal.module.scss"
-import { IAuthForm } from "@/models/forms"
 
 const AuthModal: FC = () => {
-	const [remind, setRemind] = useState<boolean>(false)
-
-	const changeRemind = useCallback(() => {
-		setRemind((prev) => !prev)
-	}, [])
-
 	const { errors, fields, reset, handleSubmit } = useAppForm<IAuthForm>([
 		{
 			name: "email",
-			rules: { required: true, pattern: ValidationUtil.email() },
+			rules: { required: true, pattern: ValidationUtil.email },
 			default: "",
 		},
 		{
@@ -34,12 +28,16 @@ const AuthModal: FC = () => {
 			rules: { required: true, minLength: 8, maxLength: 32 },
 			default: "",
 		},
+		{
+			name: "remind",
+			default: false,
+		},
 	])
 
-	const onSubmit = (data: any) => {
-		console.log(data) // send auth
+	const onSubmit = handleSubmit((data) => {
+		console.log(data)
 		reset()
-	}
+	})
 
 	const auth = useAppSelector(authModalSelector)
 
@@ -57,7 +55,7 @@ const AuthModal: FC = () => {
 					</span>
 				</p>
 
-				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+				<form className={styles.form} onSubmit={onSubmit}>
 					<Input
 						type="text"
 						require={true}
@@ -79,8 +77,8 @@ const AuthModal: FC = () => {
 					<Checkbox
 						className={styles.form__checkbox}
 						title={"Запомнить меня"}
-						checked={remind}
-						onChange={changeRemind}
+						checked={fields.remind.value}
+						onChange={fields.remind.onChange}
 					/>
 					<span
 						className={styles.form__remind}
