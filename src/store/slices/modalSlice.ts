@@ -6,7 +6,8 @@ import { IModalSlice } from '../types'
 const initialState: IModalSlice = {
     auth: false,
     register: false,
-    remind: false
+    remind: false,
+    wishList: false
 }
 
 const modalSlice = createSlice({
@@ -27,6 +28,9 @@ const modalSlice = createSlice({
             state.remind = action.payload
             state.register = false
             state.auth = false
+        },
+        changeOpenWishList(state, action: PayloadAction<boolean>) {
+            state.wishList = action.payload
         }
     },
     extraReducers(builder) {

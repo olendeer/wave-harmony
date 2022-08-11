@@ -1,12 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IProductSlice } from '../types'
 
-import { fetchProducts, fetchPopularProducts } from '../api/productApi'
+import { fetchProducts, fetchPopularProducts, fetchWishProducts } from '../api/productApi'
+import { IProduct } from '@/models/product'
 
 
 const initialState: IProductSlice = {
     products: [],
-    productsPopular: [] 
+    productsPopular: [],
+    productsWish: []
 }
 
 const productSlice = createSlice({
@@ -26,6 +28,9 @@ const productSlice = createSlice({
         })
         .addCase(fetchPopularProducts.rejected, (state, action) => {
 
+        })
+        .addCase(fetchWishProducts.fulfilled, (state, action: PayloadAction<IProduct[]>) => {
+            state.productsWish = action.payload.map(item => ({ select: false, product: item }))
         })
     },
 })

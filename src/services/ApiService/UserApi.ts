@@ -24,12 +24,13 @@ export interface IAuthResponse {
 
 class UserApi<C extends ClientType> extends Api<IUserApi, C> implements IUserApi {
     
-    fetchUserById = async (id: number) => await this.client.get<IUser>(`/users?id=${id}`).then(res => res.data)
+    fetchUserById = async (id: number) => await this.client.get<IUser>(`/users/${id}`).then(res => res.data)
 
     authUser = async (data: ISingInUserRequest) => await this.client.post<IAuthResponse>('/login', data).then(res => res.data)
 
     registerUser = async (data: IRegisterUserRequest) => await this.client.post<IAuthResponse>('/register', data).then(res => res.data)
 
+    updateWishList = async (data: number[], id: number) => await this.client.patch<any>(`/users/${id}`, { wishList: data }).then(res => res.data)
 
 }
 

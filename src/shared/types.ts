@@ -10,6 +10,8 @@ export type PriceConvert = (value: number) => string
 export type SaleConvert = (value: number) => string
 export type PriceWithSaleConvert = (value: number, sale: number) => string
 
+export type IdsFromParamsGenerate = (ids: number[]) => string
+
 export type UseOutClickHandlerType = Dispatch<SetStateAction<boolean>> | ((value: boolean) => void)
 
 

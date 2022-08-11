@@ -27,6 +27,7 @@ export interface ITrustApi {
 export interface IProductsApi {
     fetchProducts: () => Promise<IProduct[]>
     fetchPopularProducts: () =>  Promise<IProduct[]>
+    fetchWishProducts: (ids: number[]) => Promise<IProduct[]>
 }
 
 export interface IMainSliderApi {
@@ -43,6 +44,7 @@ export interface IUserApi {
     fetchUserById: (id: number) => Promise<IUser>
     authUser: (data: ISingInUserRequest) => Promise<IAuthResponse>
     registerUser: (data: IRegisterUserRequest) => Promise<IAuthResponse>
+    updateWishList: (data: number[], id: number) => Promise<any>
 }
 
 // Типы сервисов которые доступны к добавлению в апи

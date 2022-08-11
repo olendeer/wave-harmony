@@ -6,7 +6,8 @@ import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import HeaderLinks from "./HeaderLinks/HeaderLinks"
 
 import { stopPropagation } from "@/utilites/stopPropagation"
-import { useActions } from "@/store/hooks"
+import { useActions, useAppSelector } from "@/store/hooks"
+import { userSelector, wishListLengthSelector } from "@/store/selectors"
 import { useInput } from "@/hooks/useInput"
 import { useOutClick } from "@/hooks/useOutClick"
 import { useTheme } from "@/hooks/useTheme"
@@ -29,7 +30,10 @@ const Header: FC = () => {
 
 	const search = useInput("")
 
-	const { changeOpenAuth } = useActions()
+	const { changeOpenAuth, fetchWishProducts } = useActions()
+
+	const wishlist = useAppSelector(wishListLengthSelector)
+	const user = useAppSelector(userSelector)
 
 	const searchHandler = useCallback(() => {
 		if (!searchCollapse) {
@@ -106,17 +110,31 @@ const Header: FC = () => {
 							</IconDot>
 							<IconDot
 								icon={
-									<User
-										onClick={() => changeOpenAuth(true)}
-									/>
+									user ? (
+										<Link
+											to="/profile"
+											className={
+												styles["header__user-image"]
+											}
+										>
+											<img src={user.image} alt="user" />
+										</Link>
+									) : (
+										<User
+											onClick={() => changeOpenAuth(true)}
+										/>
+									)
 								}
 								dot={false}
 							/>
 							<IconDot
 								icon={
-									<Heart className={styles["icon-heart"]} />
+									<Heart
+										className={styles["icon-heart"]}
+										onClick={() => fetchWishProducts()}
+									/>
 								}
-								dot={true}
+								dot={!!wishlist}
 								pt={4}
 							/>
 							<IconDot icon={<Cart />} dot={true} />

@@ -4,7 +4,7 @@ export interface IUser {
     name?: string
     sirname?: string
     image?: string
-    wishlist?: any[]
+    wishList: number[]
     cart?: any[]
     lang?: string
     email: string
