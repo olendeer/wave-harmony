@@ -33,8 +33,8 @@ const init = createAsyncThunk(
     }
 )
 
-const toogleProductToWishList = createAsyncThunk(
-    'app/toogleProductToWishList',
+const toggleProductToWishList = createAsyncThunk(
+    'app/toggleProductToWishList',
     async (id: number, { getState }) => {
         let wishList = (getState() as RootState).app.wishList
         let user = (getState() as RootState).app.user
@@ -45,7 +45,28 @@ const toogleProductToWishList = createAsyncThunk(
             } else {
                 wishList = [...wishList, id]
             }
-            //send user post
+            if(user){
+                Api.updateWishList(wishList, user.id)
+            }
+            Storage.setWishList(wishList)
+
+            return wishList
+        } catch (error) {
+            console.log(error)
+            return wishList
+        }
+
+    }
+)
+
+const removeProductsFromWishList = createAsyncThunk(
+    'app/removeProductsFromWishList',
+    async (ids: number[], { getState }) => {
+        let wishList = (getState() as RootState).app.wishList
+        let user = (getState() as RootState).app.user
+        try{
+            wishList = wishList.filter(item => !ids.includes(item))
+
             if(user){
                 Api.updateWishList(wishList, user.id)
             }
@@ -75,4 +96,4 @@ const changeLang = createAsyncThunk(
 )
 
 
-export { init, changeLang, toogleProductToWishList }
+export { init, changeLang, toggleProductToWishList, removeProductsFromWishList }

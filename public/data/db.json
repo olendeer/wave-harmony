@@ -325,13 +325,7 @@
       "phone": "+7 (495) 988 3345",
       "subscribe": true,
       "image": "data/users/christian-serratos.png",
-      "wishList": [
-        3,
-        4,
-        5,
-        1,
-        6
-      ],
+      "wishList": [],
       "cart": [],
       "lang": "ru",
       "birth": "21.09.1990",

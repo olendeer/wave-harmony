@@ -1,11 +1,21 @@
+import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from ".";
+
 
 // products
 export const popularProductsSelector = (state: RootState) => state.products.productsPopular
 export const productsSelector = (state: RootState) => state.products.products
 export const productsWishSelector = (state: RootState) => state.products.productsWish
-export const productsWishSelectedSelector = (state: RootState) => !!state.products.productsWish.filter(item => item.select).length
+export const IsProductsWishSelectedSelector = (state: RootState) => !!state.products.productsWish.filter(item => item.select).length
+export const productsWishSelectedSelector = (state: RootState) => state.products.productsWish.filter(item => item.select).map(item => item.product.id)
 
+export const isSelectedProductInWishListSelector = createSelector(
+    [
+        productsWishSelector,
+        (_, id) => id
+    ],
+    (products, id) => !!products.find(item => item.product.id === id && item.select)
+)
 
 // other
 export const trustSelector = (state: RootState) => state.trust.trusts

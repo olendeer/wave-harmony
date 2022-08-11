@@ -8,7 +8,9 @@ import styles from "./Button.module.scss"
 const Button: FC<IButtonProps> = ({
 	children,
 	mode = "fill",
+	style = "primary",
 	height,
+	size = "normal",
 	padding,
 	className,
 	...props
@@ -20,6 +22,8 @@ const Button: FC<IButtonProps> = ({
 			className={[
 				styles.button,
 				styles["button--" + mode],
+				styles["button--" + style],
+				styles["button--" + size],
 				className,
 				styles[theme],
 			].join(" ")}

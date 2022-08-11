@@ -1,7 +1,7 @@
 import { IAuthResponse } from '@/services/ApiService/UserApi'
 import { Lang, Theme } from '@/shared/types'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { changeLang, init, toogleProductToWishList } from '../api/appApi'
+import { changeLang, init, removeProductsFromWishList, toggleProductToWishList } from '../api/appApi'
 import { authUser, registerUser } from '../api/userApi'
 import { IAppSlice } from '../types'
 
@@ -28,12 +28,6 @@ const appSlice = createSlice({
         setAccessToken(state, action: PayloadAction<string>){
             state.accessToken = action.payload
         },
-        // addProductToWishList(state, action: PayloadAction<number>) {
-        //     state.wishList.push(action.payload)
-        // },
-        // removeProductToWishList(state, action: PayloadAction<number>) {
-        //     state.wishList = state.wishList.filter(item => item !== action.payload)
-        // },
         setWishList(state, action: PayloadAction<number[]>) {
             state.wishList = action.payload
         },
@@ -47,7 +41,13 @@ const appSlice = createSlice({
             }
             console.log('init app')
         })
-        .addCase(toogleProductToWishList.fulfilled, (state, action: PayloadAction<number[]>) => {
+        .addCase(toggleProductToWishList.fulfilled, (state, action: PayloadAction<number[]>) => {
+            state.wishList = action.payload
+            if(state.user){
+                state.user.wishList = state.wishList
+            }
+        })
+        .addCase(removeProductsFromWishList.fulfilled, (state, action: PayloadAction<number[]>) => {
             state.wishList = action.payload
             if(state.user){
                 state.user.wishList = state.wishList

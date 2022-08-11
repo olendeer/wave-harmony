@@ -6,5 +6,7 @@ export interface IButtonProps{
     height?: string,
     padding?: string,
     className?: string
+    size?: string
+    style?: string
     onClick?: () => void
 }

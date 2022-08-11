@@ -6,9 +6,13 @@ import Loading from "@c/ui/Loading/Loading"
 
 import { PriceUtil } from "@/utilites/priceUtil"
 import { useActions, useAppSelector } from "@/store/hooks"
-import { wishListSelector } from "@/store/selectors"
+import {
+	isSelectedProductInWishListSelector,
+	wishListSelector,
+} from "@/store/selectors"
 
 import { ReactComponent as HeartFav } from "@/assets/svg/heart-fav.svg"
+import { ReactComponent as Delete } from "@/assets/svg/delete.svg"
 
 import styles from "./Card.module.scss"
 
@@ -19,11 +23,16 @@ const Card: FC<ICardProps> = ({
 }) => {
 	const [load, setLoad] = useState<boolean>(true)
 
-	const { toogleProductToWishList } = useActions()
+	const { toggleProductToWishList, toggleSelectProductInWishList } =
+		useActions()
 
 	const wishlist = useAppSelector(wishListSelector)
 
-	const onToggleWishList = () => toogleProductToWishList(product.id)
+	const isSelected = useAppSelector((state) =>
+		isSelectedProductInWishListSelector(state, product.id)
+	)
+
+	const onToggleWishList = () => toggleProductToWishList(product.id)
 
 	return (
 		<div className={[styles.card, styles[`card--${size}`]].join(" ")}>
@@ -35,7 +44,12 @@ const Card: FC<ICardProps> = ({
 					onLoad={() => setLoad(false)}
 				/>
 				{mode === "wishlist" ? (
-					""
+					<div
+						className={styles.card__delete}
+						onClick={onToggleWishList}
+					>
+						<Delete />
+					</div>
 				) : (
 					<HeartFav
 						className={[
@@ -51,6 +65,19 @@ const Card: FC<ICardProps> = ({
 					<span className={styles["card__image-sale"]}>
 						{PriceUtil.sale(product.sale)}
 					</span>
+				)}
+				{mode === "wishlist" && (
+					<div
+						className={[
+							styles.card__select,
+							isSelected ? styles["card__select--active"] : "",
+						].join(" ")}
+						onClick={() =>
+							toggleSelectProductInWishList(product.id)
+						}
+					>
+						<span></span>
+					</div>
 				)}
 			</div>
 			<div className={styles.card__info}>
