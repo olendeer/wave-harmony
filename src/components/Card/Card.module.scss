@@ -2,6 +2,17 @@
 @import '@/styles/_mixins';
 @import '@/styles/_abstract';
 
+%card__manage{
+    width: 36px;
+    height: 36px;
+    background-color: $backgroundColorLight;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+}
 
 .card{
     display: grid;
@@ -72,6 +83,54 @@
             margin-bottom: -6px;
         }
     }
+
+    &__delete{
+        @extend %card__manage;
+        right: 20px;
+
+        &:hover svg {
+            color: $themeColorRed;
+        }
+
+        svg{
+            color: $textColorPlaceholder;
+            transition-duration: .2s;
+        }
+    }
+
+    &__select{
+        @extend %card__manage;
+        left: 20px;
+
+        span{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid $borderInput;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &::after{
+                width: 0px;
+                height: 0px;
+                content: '';
+                transition-duration: .2s;
+                border-radius: 50%;
+                background: $buttonColor;
+            }
+        }
+
+        &--active{
+            span{
+                &::after{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+
 
     &__info{
         display: grid;

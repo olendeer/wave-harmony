@@ -68,7 +68,9 @@
         align-items: center;
 
         &-checkbox{
+            margin-right: 40px;
             @include fontNormal(18px);
+
             span{
                 width: 20px;
                 height: 20px;

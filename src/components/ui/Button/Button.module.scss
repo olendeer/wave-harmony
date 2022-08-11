@@ -53,6 +53,21 @@
         opacity: 0;
     }
 
+    &.button--small{
+        height: 40px;
+        min-height: 40px;
+        padding: 0px 15px;
+        border-radius: 10px;
+        @include fontNormal(16px);
+
+        &::after{
+            border-radius: 9px;
+        }
+
+        &::before{
+            border-radius: 9px;
+        }
+    }
 
 
     &--fill{
@@ -116,7 +131,46 @@
         }
     }
 
-    &--stroke-white {
+    &--stroke.button--warning {
+        background: $themeColorRed;
+        span{
+            @include gradientText($themeColorRed);
+        }
+
+        &::before{
+            background: lighten($themeColorRed, 30%);
+        }
+
+        &:hover{
+            background: transparent;
+            span{
+                @include gradientText($buttonColorText);
+            }
+        }
+
+        &:active{
+            background: $themeColorRed;
+            span{
+                @include gradientText($themeColorRed);
+            }
+    
+            &::after{
+                @include whiteAfterBackground;
+            }
+        }
+    }
+
+    &--stroke.button--warning.button--small{
+        &::after{
+            border-radius: 9px;
+        }
+
+        &::before{
+            border-radius: 9px;
+        }
+    }
+
+    &--stroke.button--white {
         background: transparent;
         border: 1px solid $backgroundColorLight;
         @include fontNormal(20px);
@@ -126,7 +180,7 @@
         }
 
         span{
-            color: $backgroundColorLight;
+            @include gradientText($backgroundColorLight);
         }
 
         &:hover{
@@ -143,6 +197,16 @@
             span{
                 @include gradientText($backgroundColorLight)
             }
+        }
+    }
+
+    &--stroke.button--white.button--small{
+        &::after{
+            border-radius: 9px;
+        }
+
+        &::before{
+            border-radius: 9px;
         }
     }
 

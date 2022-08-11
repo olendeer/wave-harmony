@@ -60,7 +60,8 @@ const MainSlider: FC = () => {
 									{item.description}
 								</p>
 								<Button
-									mode="stroke-white"
+									mode="stroke"
+									style="white"
 									className={styles["slide__info-buy"]}
 								>
 									Купить {item.name}
