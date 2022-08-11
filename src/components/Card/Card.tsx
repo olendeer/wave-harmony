@@ -5,13 +5,25 @@ import Button from "@c/ui/Button/Button"
 import Loading from "@c/ui/Loading/Loading"
 
 import { PriceUtil } from "@/utilites/priceUtil"
+import { useActions, useAppSelector } from "@/store/hooks"
+import { wishListSelector } from "@/store/selectors"
 
 import { ReactComponent as HeartFav } from "@/assets/svg/heart-fav.svg"
 
 import styles from "./Card.module.scss"
 
-const Card: FC<ICardProps> = ({ size = "small", product }) => {
+const Card: FC<ICardProps> = ({
+	size = "small",
+	product,
+	mode = "standart",
+}) => {
 	const [load, setLoad] = useState<boolean>(true)
+
+	const { toogleProductToWishList } = useActions()
+
+	const wishlist = useAppSelector(wishListSelector)
+
+	const onToggleWishList = () => toogleProductToWishList(product.id)
 
 	return (
 		<div className={[styles.card, styles[`card--${size}`]].join(" ")}>
@@ -22,15 +34,20 @@ const Card: FC<ICardProps> = ({ size = "small", product }) => {
 					alt="product"
 					onLoad={() => setLoad(false)}
 				/>
-				<HeartFav
-					className={[
-						styles["card__image-favourite"],
-						// product.fav
-						// 	? styles["card__image-favourite--active"]
-						// 	: "",
-					].join(" ")}
-				/>
-				{product.sale && (
+				{mode === "wishlist" ? (
+					""
+				) : (
+					<HeartFav
+						className={[
+							styles["card__image-favourite"],
+							wishlist.includes(product.id)
+								? styles["card__image-favourite--active"]
+								: "",
+						].join(" ")}
+						onClick={onToggleWishList}
+					/>
+				)}
+				{product.sale && mode === "standart" && (
 					<span className={styles["card__image-sale"]}>
 						{PriceUtil.sale(product.sale)}
 					</span>

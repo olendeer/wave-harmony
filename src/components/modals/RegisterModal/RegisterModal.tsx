@@ -18,7 +18,7 @@ import styles from "./RegisterModal.module.scss"
 const RegisterModal: FC = () => {
 	const register = useAppSelector(registerModalSelector)
 
-	const { changeOpenAuth, changeOpenRegister } = useActions()
+	const { changeOpenAuth, changeOpenRegister, registerUser } = useActions()
 
 	const { errors, fields, reset, handleSubmit } = useAppForm<IRegisterForm>([
 		{
@@ -52,8 +52,8 @@ const RegisterModal: FC = () => {
 		},
 	])
 
-	const onSubmit = handleSubmit((data) => {
-		console.log(data)
+	const onSubmit = handleSubmit(async (data) => {
+		await registerUser(data)
 		reset()
 	})
 

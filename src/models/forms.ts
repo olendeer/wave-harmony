@@ -2,7 +2,7 @@ import { ChangeInput } from "@/shared/types"
 import { DeepRequired, FieldErrorsImpl, UseFormHandleSubmit, UseFormReset } from "react-hook-form"
 
 export interface IAppFormField {
-    default?: string | boolean
+    default: string | boolean
     name: string
     rules?: object
 } 
@@ -24,16 +24,8 @@ export interface IAppFormFieldsReturn{
     [k: string]: IAppFormFieldInputReturn | IAppFormFieldCheckboxReturn
 }
 
-export interface IAppFormReturn<T> {
-    handleSubmit: UseFormHandleSubmit<{
-        [k: string]: string | boolean | undefined;
-    }>
-    errors: FieldErrorsImpl<DeepRequired<T>>
-    reset: UseFormReset<{
-        [k: string]: string | undefined;
-    }>
-
-    fields: T
+export type FormDataSubmitHandler<U extends IAppFormFieldsReturn> = {
+    [k in keyof U ] : U[k]['value']
 }
 
 

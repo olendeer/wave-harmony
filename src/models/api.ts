@@ -1,12 +1,15 @@
+import { AxiosInstance } from "axios"
 
 import { ProductsApi } from "@/services/ApiService/ProductsApi"
 import { TrustApi } from "@/services/ApiService/TrustApi"
-import { AxiosInstance } from "axios"
+import { IAuthResponse, IRegisterUserRequest, ISingInUserRequest, UserApi } from "@/services/ApiService/UserApi"
+import { GalleryApi } from "@/services/ApiService/GalleryApi"
+import { MainSliderApi } from "@/services/ApiService/MainSliderApi"
+
 import { ITrust } from "./trust"
 import { IProduct } from './product'
 import { IMainSlide } from "./mainSlide"
-import { MainSliderApi } from "@/services/ApiService/MainSliderApi"
-import { GalleryApi } from "@/services/ApiService/galleryApi"
+import { IUser } from "./user"
 
 
 // Тип клиента
@@ -24,6 +27,7 @@ export interface ITrustApi {
 export interface IProductsApi {
     fetchProducts: () => Promise<IProduct[]>
     fetchPopularProducts: () =>  Promise<IProduct[]>
+    fetchWishProducts: (ids: number[]) => Promise<IProduct[]>
 }
 
 export interface IMainSliderApi {
@@ -34,16 +38,25 @@ export interface IGalleryApi {
     fetchGallery: () => Promise<string[]>
 }
 
+
+
+export interface IUserApi {
+    fetchUserById: (id: number) => Promise<IUser>
+    authUser: (data: ISingInUserRequest) => Promise<IAuthResponse>
+    registerUser: (data: IRegisterUserRequest) => Promise<IAuthResponse>
+    updateWishList: (data: number[], id: number) => Promise<any>
+}
+
 // Типы сервисов которые доступны к добавлению в апи
 
-export type IService = typeof TrustApi | typeof ProductsApi | typeof MainSliderApi | typeof GalleryApi // | что-то ещё.....
+export type IService = typeof TrustApi | typeof ProductsApi | typeof MainSliderApi | typeof GalleryApi | typeof UserApi // | что-то ещё.....
 
 
 
 
 // Интерфейс общего сервиса
 
-export type IApiClient = ITrustApi & IProductsApi & IMainSliderApi & IGalleryApi // & что-то ещё'
+export type IApiClient = ITrustApi & IProductsApi & IMainSliderApi & IGalleryApi & IUserApi // & что-то ещё'
 
 
 

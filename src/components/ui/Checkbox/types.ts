@@ -1,3 +1,4 @@
+import { ChangeInput } from "@/shared/types"
 
 
 export interface ICheckbox{
@@ -6,5 +7,5 @@ export interface ICheckbox{
     checked: boolean
     value?: string | boolean
     // onChange: () => void
-    onChange: any
+    onChange: ChangeInput
 }

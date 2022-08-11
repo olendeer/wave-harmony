@@ -1,5 +1,7 @@
 import Api from "@/services/ApiService";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { RootState } from "..";
+import actions from "../actions";
 
 const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
@@ -11,5 +13,18 @@ const fetchPopularProducts = createAsyncThunk(
     async () => await Api.fetchPopularProducts()
 )
 
+const fetchWishProducts = createAsyncThunk(
+    'products/fetchWishProducts',
+    async (_, { dispatch, getState, rejectWithValue }) => {
+        try {
+            dispatch( actions.changeOpenWishList(true) )
+            const wishList = (getState() as RootState).app.wishList
+            const response = await Api.fetchWishProducts(wishList)
+            return response
+        } catch (error) {
+            return rejectWithValue([])
+        }
+    }
+)
 
-export { fetchProducts, fetchPopularProducts }
+export { fetchProducts, fetchPopularProducts, fetchWishProducts }
