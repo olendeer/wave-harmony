@@ -8,9 +8,7 @@
     background-color: $backgroundColorLight;
     border-radius: 10px;
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %fCenter;
     top: 20px;
 }
 
@@ -39,9 +37,7 @@
         overflow: hidden;
         position: relative;
         flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @extend %fCenter;
 
         img{
             width: 100%;
@@ -107,9 +103,7 @@
             height: 20px;
             border-radius: 50%;
             border: 1px solid $borderInput;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @extend %fCenter;
             
             &::after{
                 width: 0px;

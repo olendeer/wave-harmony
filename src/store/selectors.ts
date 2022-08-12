@@ -35,7 +35,13 @@ export const authModalSelector = (state: RootState) => state.modal.auth
 export const registerModalSelector = (state: RootState) => state.modal.register
 export const remindModalSelector = (state: RootState) => state.modal.remind
 export const wishListModalSelector = (state: RootState) => state.modal.wishList
+export const finishAuthModalSelector = (state: RootState) => state.modal.finishAuth
 
+// info
+export const contactsSelector = (state: RootState) => state.info.contacts
+export const aboutSelector = (state: RootState) => state.info.about
+export const deliverySelector = (state: RootState) => state.info.delivery
+export const partnersSelector = (state: RootState) => state.info.partners
 
 
 

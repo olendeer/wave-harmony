@@ -1,0 +1,30 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.modal{
+    display: grid;
+    width: 335px;
+    
+    svg{
+        position: static;
+        margin-bottom: 25px;
+    }
+
+    &__header{
+        color: $textColor;
+        margin-bottom: 25px;
+        @include fontMedium(24px);
+    }
+
+    &__list{
+        padding-left: 25px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+
+        li{
+            @include fontNormal(18px);
+            margin-bottom: 10px;
+        }
+    }
+}

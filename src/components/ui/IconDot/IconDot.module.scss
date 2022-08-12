@@ -1,13 +1,12 @@
 @import '@/styles/_variables';
+@import '@/styles/_abstract';
 
 .icon{
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 34px;
     width: 34px;
     cursor: pointer;
+    @extend %fCenter;
 
     svg{
         z-index: 1;

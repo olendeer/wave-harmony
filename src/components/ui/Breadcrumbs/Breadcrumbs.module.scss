@@ -1,0 +1,16 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.breadcrumbs{
+    display: flex;
+    padding: 40px 0px 80px;
+    
+    &__item{
+        color: $textColor;
+        @include fontNormal(18px);
+
+        &--last{
+            color: $borderInput;
+        }
+    }
+}

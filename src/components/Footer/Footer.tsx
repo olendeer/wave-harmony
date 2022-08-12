@@ -3,13 +3,8 @@ import { FC } from "react"
 import { Link } from "react-router-dom"
 
 import ContainerLayout from "@c/layouts/ContainerLayout/ContainerLayout"
+import SocialLinks from "@c/SocialLinks/SocialLinks"
 import FooterColumn from "./FooterColumn/FooterColomn"
-import FooterSocial from "./FooterSocial/FooterSocial"
-
-import { ReactComponent as Vk } from "@/assets/svg/social/vk.svg"
-import { ReactComponent as Fb } from "@/assets/svg/social/fb.svg"
-import { ReactComponent as Wa } from "@/assets/svg/social/wa.svg"
-import { ReactComponent as In } from "@/assets/svg/social/in.svg"
 
 import { ReactComponent as Delivery } from "@/assets/svg/delivery.svg"
 import { ReactComponent as Certificate } from "@/assets/svg/certificate.svg"
@@ -144,20 +139,7 @@ const Footer: FC = () => {
 					>
 						8 (800) 511-36-39
 					</a>
-					<div className={styles["footer__social-list"]}>
-						<FooterSocial link="/">
-							<Vk />
-						</FooterSocial>
-						<FooterSocial link="/">
-							<Wa />
-						</FooterSocial>
-						<FooterSocial link="/">
-							<Fb />
-						</FooterSocial>
-						<FooterSocial link="/">
-							<In />
-						</FooterSocial>
-					</div>
+					<SocialLinks />
 					<p className={styles.footer__copyright}>
 						Информация для покупателей Wave Harmony - женская одежда
 						для серфинга и любых других, водных видов спорта. <br />

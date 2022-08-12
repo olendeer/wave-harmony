@@ -7,6 +7,8 @@ import * as appActions from './slices/appSlice'
 import * as appActionsAsync from './api/appApi'
 import * as modalActions from './slices/modalSlice'
 import * as userActionsAsync from './api/userApi'
+import * as infoActionsAsync from './api/infoApi'
+import * as infoActions from './slices/infoSlice'
 
 
 const actions = {
@@ -18,7 +20,9 @@ const actions = {
     ...appActions.actions,
     ...appActionsAsync,
     ...modalActions.actions,
-    ...userActionsAsync
+    ...userActionsAsync,
+    ...infoActions.actions,
+    ...infoActionsAsync
 }
 
 

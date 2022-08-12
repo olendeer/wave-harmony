@@ -1,0 +1,512 @@
+{
+  "trust": [
+    {
+      "id": 1,
+      "image": "data/trust/2.png",
+      "name": "Регина Тодоренко",
+      "inst_link": "https://instagram.com/",
+      "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+      "video_link": "https://instagram.com/",
+      "followers": "8,5млн."
+    },
+    {
+      "id": 2,
+      "image": "data/trust/2.png",
+      "name": "Блогер",
+      "inst_link": "https://instagram.com/",
+      "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+      "video_link": "https://instagram.com/",
+      "followers": "8,5млн."
+    },
+    {
+      "id": 3,
+      "image": "data/trust/2.png",
+      "name": "Блогер 2",
+      "inst_link": "https://instagram.com/",
+      "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+      "video_link": "https://instagram.com/",
+      "followers": "8,5млн."
+    },
+    {
+      "id": 4,
+      "image": "data/trust/3.png",
+      "name": "Блогер 3",
+      "inst_link": "https://instagram.com/",
+      "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+      "video_link": "https://instagram.com/",
+      "followers": "8,5млн."
+    },
+    {
+      "id": 5,
+      "image": "data/trust/2.png",
+      "name": "Блогер 3",
+      "inst_link": "https://instagram.com/",
+      "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+      "video_link": "https://instagram.com/",
+      "followers": "8,5млн."
+    },
+    {
+      "id": 6,
+      "image": "data/trust/3.png",
+      "name": "Блогер 3",
+      "inst_link": "https://instagram.com/",
+      "description": "Блогер, телеведущая, певица, завезда передачи «Орел и Решка», молодая мама и просто суперхаризматичная персона, ловит волну вместе с Wave Harmony",
+      "video_link": "https://instagram.com/",
+      "followers": "8,5млн."
+    }
+  ],
+  "products": [
+    {
+      "type": "surfing",
+      "isNew": true,
+      "id": 1,
+      "name": "Unity",
+      "images": [
+        "data/products/1/1.png",
+        "data/products/1/2.png",
+        "data/products/1/3.png"
+      ],
+      "price": 4000,
+      "sale": null,
+      "popular": true,
+      "sizes": [
+        "XS",
+        "S",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": true,
+      "type": "surfing",
+      "id": 2,
+      "name": "Fancy",
+      "images": [
+        "data/products/2/1.png"
+      ],
+      "price": 4000,
+      "sale": 2,
+      "popular": false,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": false,
+      "type": "conjoint",
+      "id": 3,
+      "name": "Moana Neon",
+      "images": [
+        "data/products/3/1.png"
+      ],
+      "price": 4000,
+      "sale": 41,
+      "popular": true,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": true,
+      "type": "leggings",
+      "id": 4,
+      "name": "Kiana",
+      "images": [
+        "data/products/4/1.png"
+      ],
+      "price": 1000,
+      "sale": 23,
+      "popular": true,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": false,
+      "type": "conjoint",
+      "id": 5,
+      "name": "Mandy",
+      "images": [
+        "data/products/5/1.png"
+      ],
+      "price": 45000,
+      "sale": null,
+      "popular": true,
+      "sizes": [
+        "XS",
+        "S",
+        "M"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": true,
+      "type": "sunscreens",
+      "id": 6,
+      "name": "Aloha Pink",
+      "images": [
+        "data/products/6/1.png"
+      ],
+      "price": 4000,
+      "sale": null,
+      "popular": true,
+      "sizes": [
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": false,
+      "type": "sunscreens",
+      "id": 7,
+      "name": "Ocean",
+      "images": [
+        "data/products/7/1.png"
+      ],
+      "price": 2000,
+      "sale": null,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": false,
+      "type": "separate",
+      "id": 8,
+      "name": "Selena",
+      "images": [
+        "data/products/8/1.png"
+      ],
+      "price": 2000,
+      "sale": null,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    },
+    {
+      "isNew": true,
+      "type": "separate",
+      "id": 9,
+      "name": "Dakota Orange",
+      "images": [
+        "data/products/9/1.png"
+      ],
+      "price": 2000,
+      "sale": null,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "По меркам"
+      ],
+      "sunProtection": "",
+      "description": "",
+      "params": "",
+      "availability": "",
+      "rate": ""
+    }
+  ],
+  "main_slider": [
+    {
+      "id": 1,
+      "images": [
+        "data/products/1/2.png",
+        "data/products/1/1.png"
+      ],
+      "name": "Ocean",
+      "description": "с длинными рукавами"
+    },
+    {
+      "id": 2,
+      "images": [
+        "data/products/2/1.png",
+        "data/products/1/3.png"
+      ],
+      "name": "Mandy",
+      "description": "новая модель"
+    },
+    {
+      "id": 3,
+      "images": [
+        "data/products/5/1.png",
+        "data/products/4/1.png"
+      ],
+      "name": "Kiana",
+      "description": "необычный цвет"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Christian",
+      "sirname": "Serratos",
+      "image": "data/users/christian-serratos.png",
+      "wishList": [],
+      "cart": [],
+      "lang": "ru",
+      "email": "christian@gmail2.com",
+      "phone": "+7 (495) 988 3345",
+      "subscribe": false,
+      "password": "1029384756",
+      "birth": "21.09.1990",
+      "orders": []
+    },
+    {
+      "email": "olendeer666@gmail.com",
+      "password": "$2a$10$r8v6vm9CfO8lxt3Ks6LICuz2jU/6KACc1bhUI93CmmJcJbzVdGAGm",
+      "id": 2
+    },
+    {
+      "email": "christian@gmail.com",
+      "password": "$2a$10$tRX50I8LM9knhEyrdJvc9.09GDJjdVWG5hYDppn0zBFRYYxd8wwAq",
+      "name": "Christian",
+      "sirname": "Serratos",
+      "phone": "+7 (495) 988 3345",
+      "subscribe": true,
+      "image": "data/users/christian-serratos.png",
+      "wishList": [
+        1,
+        3,
+        4
+      ],
+      "cart": [],
+      "lang": "ru",
+      "birth": "21.09.1990",
+      "orders": [],
+      "id": 3
+    }
+  ],
+  "gallery": [
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png",
+    "data/gallery/g1.png",
+    "data/gallery/g2.png"
+  ],
+  "about": {
+    "text": "WAVE HARMONY международная компания созданная в 2014 году. На сегодняшний день наша основная специализация — производство одежды для серфинга и других видов водного спорта. Мы сами занимаемся серфингом и не понаслышке знаем, как важна комфортная и практичная одежда, поэтому мы предлагаем вам:",
+    "advantages": [
+      {
+        "name": "Европейское качество",
+        "title": "Для вашего комфорта и максимальной безопасности, мы используем ткани европейского образца с плотностью 1,1 — 1,3 г/см"
+      },
+      {
+        "name": "Фурнитура от SBS",
+        "title": "SBS является лидером на мировом рынке инновационных соединительных технологий и гарантирует более 20 тыс. циклов открытия и закрытия молнии"
+      },
+      {
+        "name": "Идеальны во всем",
+        "title": "Купальники не бояться соли и хлорки, эластичны, устойчивы к повреждениям, отлично садятся по фигуре и не теряют своей изначальной красоты"
+      },
+      {
+        "name": "Европейское качество",
+        "title": "Для вашего комфорта и максимальной безопасности, мы используем ткани европейского образца с плотностью 1,1 — 1,3 г/см"
+      },
+      {
+        "name": "Фурнитура от SBS",
+        "title": "SBS является лидером на мировом рынке инновационных соединительных технологий и гарантирует более 20 тыс. циклов открытия и закрытия молнии"
+      },
+      {
+        "name": "Идеальны во всем",
+        "title": "Купальники не бояться соли и хлорки, эластичны, устойчивы к повреждениям, отлично садятся по фигуре и не теряют своей изначальной красоты"
+      }
+    ]
+  },
+  "contacts": {
+    "phone": "8 (800) 511 36 39",
+    "schedule": "пн-пт 9:00-21:00",
+    "social": {
+      "in": "https://instagram.com/",
+      "vk": "https://instagram.com/",
+      "fb": "https://instagram.com/",
+      "wa": "https://instagram.com/"
+    },
+    "email": "zakaz@waveharmony.com",
+    "dealerEmail": "partner@waveharmony.com",
+    "requisites": "ИП Муравьев Павел Алексеевич 249034, Калужская область"
+  },
+  "delivery": [
+    {
+      "name": "Москва и МО",
+      "title": "доставка и примерка по Москвеи московской области",
+      "questions": [
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        }
+      ]
+    },
+    {
+      "name": "Россия и мир",
+      "title": "доставка лично в руки, в один из 1200 пунктов выдачи",
+      "questions": [
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        }
+      ]
+    },
+    {
+      "name": "Оплата",
+      "title": "оплачивайте на сайте или другимудобным для вас способом",
+      "questions": [
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        },
+        {
+          "name": "Сколько стоит доставка с примеркой в пределах МКАД?",
+          "answer": "Стоимость доставки в пределах МКАД - 300р.\n Дата возможной доставки с примеркой согласовывается с менеджером.\n Доставка осуществляется в будние дни c 9-00 до 19-00."
+        }
+      ]
+    }
+  ],
+  "partners": [
+    {
+      "id": 1,
+      "name": "Surfbrother Skolkovo",
+      "address": "Москва, Сколково, Большой бульвар, д. 40, БЦ Амальтея",
+      "schedule": "пн-пт 9:00-21:00",
+      "phone": "+7 (495) 988 3345",
+      "site": "skolkovo.ru",
+      "images": [
+        "data/gallery/g1.png",
+        "data/gallery/g1.png"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Surfbrother Skolkovo",
+      "address": "Москва, Сколково, Большой бульвар, д. 40, БЦ Амальтея",
+      "schedule": "пн-пт 9:00-21:00",
+      "phone": "+7 (495) 988 3345",
+      "site": "skolkovo.ru",
+      "images": [
+        "data/gallery/g1.png",
+        "data/gallery/g1.png"
+      ]
+    }
+  ]
+}

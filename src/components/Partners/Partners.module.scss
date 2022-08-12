@@ -1,0 +1,90 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.partners{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 120px;
+
+    h2{
+        color: $textColor;
+        @include fontNormal(38px);
+    }
+
+    &__list{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 25px;
+    }
+}
+
+.partner{
+    padding: 30px;
+    border: 1px solid $borderPopup;
+    border-radius: 50px;
+
+    & > div {
+        span{
+            color: $textColorSecond;
+            @include fontMedium(20px);
+        }
+    }
+
+    &__link{
+        @include fontNormal(20px);
+        @include gradientText($buttonColor);
+    }
+
+    &__name{
+        color: $textColor;
+        @include fontMedium(22px);
+    }
+
+    &__address{
+        color: $textColor;
+        @include fontNormal(20px);
+    }
+
+    &__images{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 7px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        position: relative;
+        align-items: center;
+        
+        img{
+            width: 100%;
+        }
+
+        &-link{
+            position: absolute;
+            right: -1px;
+            height: 44px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            padding-left: 12px;
+            padding-right: 8px;
+            display: flex;
+            align-items: center;
+            background-color: $backgroundColorLight;
+            span{
+                @include fontNormal(18px);
+                @include gradientText($buttonColor);
+            }
+        }
+    }
+
+    &__schedule{
+        color: $textColor;
+        margin-bottom: 10px;
+        @include fontNormal(20px);
+    }
+
+    &__phone{
+        margin-bottom: 10px;
+    }
+}

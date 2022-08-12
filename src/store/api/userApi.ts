@@ -19,7 +19,6 @@ const fetchUserById = createAsyncThunk(
 const authUser = createAsyncThunk(
     'user/authUser',
     async ({ email, password, remind }: ISingInUserRequest & { remind: boolean }, { rejectWithValue, dispatch }) => {
-        // дописать запоминание пользователя
         try {
             const response = await Api.authUser({email, password})
             const wishList = response.user.wishList

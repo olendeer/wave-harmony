@@ -61,7 +61,12 @@ const Header: FC = () => {
 	return (
 		<>
 			{collapse && <FullWidthLayout className={styles.plug} />}
-			<FullWidthLayout className={collapse ? styles.wrapper : ""}>
+			<FullWidthLayout
+				className={[
+					collapse ? styles.wrapper : "",
+					styles["wrapper--border"],
+				].join(" ")}
+			>
 				<header
 					className={[
 						styles.header,

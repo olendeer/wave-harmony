@@ -61,14 +61,12 @@
         }
 
         span{
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: $backgroundColorLight;
             backdrop-filter: blur(20px);
             opacity: 0;
             transition-duration: .4s;
             @extend %fullPseudo;
+            @extend %fCenter;
             @include fontNormal(30px);
         }
 
@@ -82,13 +80,11 @@
     }
 
     &__modal{
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 0px;
         overflow: hidden;
         min-height: 200px;
-        
+        @extend %fCenter;
+
         img{
             width: 100%;
         }

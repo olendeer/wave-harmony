@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useEffect } from "react"
 
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 import ContainerLayout from "@c/layouts/ContainerLayout/ContainerLayout"
@@ -35,7 +35,14 @@ const WishList: FC = () => {
 		selectAllProductsInWishList,
 		removeSelectAllProductsInWishList,
 		removeProductsFromWishList,
+		clearProductsWishList,
 	} = useActions()
+
+	useEffect(() => {
+		if (!wishListModal) {
+			clearProductsWishList()
+		}
+	}, [wishListModal])
 
 	return (
 		<div

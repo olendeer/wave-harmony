@@ -31,6 +31,9 @@ const productSlice = createSlice({
         },
         removeSelectAllProductsInWishList(state) {
             state.productsWish = state.productsWish.map(item => ({...item, select: false}))
+        },
+        clearProductsWishList(state) {
+            state.productsWish = []
         }
     },
     extraReducers: (builder) => {

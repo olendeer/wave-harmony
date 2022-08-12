@@ -15,6 +15,9 @@
     left: 0;
     top: 0;
     animation: header .4s ease forwards;
+    &--border{
+        border-bottom: 1px solid #F0F0F0;
+    }
 }
 
 @keyframes header {
@@ -106,13 +109,11 @@
     position: absolute;
     right: 0px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition-duration: .4s;
     width: 0px;
     overflow: hidden;
     opacity: 0;
+    @extend %fCenter;
 
     &--active{
         width: 290px;

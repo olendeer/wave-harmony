@@ -7,7 +7,8 @@ const initialState: IModalSlice = {
     auth: false,
     register: false,
     remind: false,
-    wishList: false
+    wishList: false,
+    finishAuth: false
 }
 
 const modalSlice = createSlice({
@@ -31,12 +32,17 @@ const modalSlice = createSlice({
         },
         changeOpenWishList(state, action: PayloadAction<boolean>) {
             state.wishList = action.payload
+        },
+        changeOpenFinishAuth(state, action: PayloadAction<boolean>) {
+            state.finishAuth = action.payload
+            state.auth = false
         }
     },
     extraReducers(builder) {
         builder
         .addCase(authUser.fulfilled, (state) => {
             state.auth = false
+            state.finishAuth = true
         })
         .addCase(authUser.rejected, (state) => {
             state.auth = false

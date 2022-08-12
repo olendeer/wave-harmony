@@ -1,6 +1,6 @@
 import { ChildrenProp } from "@/shared/types"
 
-export interface IFooterSocialProps{
+export interface ISocialProps{
     children: ChildrenProp,
     link: string
 }

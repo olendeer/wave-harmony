@@ -3,6 +3,7 @@ import { ITrust } from "@/models/trust";
 import { IMainSlide } from "@/models/mainSlide";
 import { Lang, Theme } from "@/shared/types";
 import { IUser } from "@/models/user";
+import { IAbout, IContacts, IDelivery, IPartner } from "@/models/info";
 
 export interface IProductSlice {
     products: IProduct[]
@@ -35,8 +36,16 @@ export interface IModalSlice{
     register: boolean
     remind: boolean
     wishList: boolean
+    finishAuth: boolean
 }
 
 export interface IUserSlice {
     
+}
+
+export interface IInfoSlice{
+    about: IAbout | null
+    contacts: IContacts | null
+    delivery: { select: boolean, item: IDelivery }[]
+    partners: IPartner[]
 }

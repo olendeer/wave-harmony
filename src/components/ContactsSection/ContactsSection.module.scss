@@ -1,0 +1,53 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+@import '@/styles/_abstract';
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        color: $textColor;
+        @include fontNormal(38px);
+    }
+
+    &__list{
+        margin: 50px 0px 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 25px;
+    }
+}
+
+.contact{
+    padding: 60px;
+    border-radius: 40px;
+    border: 1px solid $borderInput;
+    position: relative;
+
+    &__icon{
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        @extend %fCenter;
+        top: 30px;
+        right: 30px;
+        border-radius: 12px;
+        background: #EEF6F1;
+    }
+
+    &__name{
+        color: $textColor;
+        margin-bottom: 20px;
+        @include fontMedium(22px);
+    }
+
+    &__info{
+        color: $textColorSecond;
+        @include fontNormal(20px);
+        
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+}
