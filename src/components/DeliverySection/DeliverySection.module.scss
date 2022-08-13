@@ -10,6 +10,7 @@
 
     &__nav{
         display: grid;
+        align-content: start;
         row-gap: 15px;
     }
 
@@ -83,6 +84,53 @@
             color: $textColor;
             margin-bottom: 50px;
             @include fontNormal(17px);
+        }
+    }
+}
+
+.questions{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__item{
+        width: 100%;
+        padding: 30px 20px 35px 0px;
+        display: grid;
+        row-gap: 20px;
+        border-top: 1px solid $borderPopup;
+        transition-duration: .4s;
+        max-height: 68px;
+        overflow: hidden;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        cursor: pointer;
+
+        &--select{
+            max-height: 300px;
+            padding: 30px 20px 35px 0px;
+
+            svg{
+
+                transform: rotate(180deg);
+            }
+        }
+
+        .name{
+            color: $textColor;
+            @include fontMedium(20px);
+        }
+        
+        .answer{
+            color: $textColor;
+            @include fontNormal(17px);
+        }
+
+        svg{
+            transition-duration: .4s;
+            cursor: pointer;
+            margin-top: 10px;
+            grid-area: 1 / 2 / 3 / 3;
         }
     }
 }

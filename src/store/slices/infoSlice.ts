@@ -17,6 +17,12 @@ const infoSlice = createSlice({
     reducers: {
         selectDelivery(state, action: PayloadAction<number>){
             state.delivery = state.delivery.map((item, index) => index === action.payload ? ({...item, select: true}) : ({...item, select: false}))
+        },
+        selectQuestionInDelivery(state, action: PayloadAction<[number, number]>){
+            const delivery = state.delivery.find((_, index) => index === action.payload[0])
+            if(delivery){
+                delivery.item.questions = delivery?.item.questions.map((item, index) => index === action.payload[1] ? ({...item, select: !item.select}) : ({ ...item, select: false}))
+            }
         }
     },
     extraReducers: (builder) => {

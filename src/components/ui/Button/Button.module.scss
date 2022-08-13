@@ -30,6 +30,8 @@
     transition-duration: .4s;
     position: relative;
     background: $buttonColor;
+
+    @extend %fCenter;
     @include fontMedium(20px);
 
     // &.dark{

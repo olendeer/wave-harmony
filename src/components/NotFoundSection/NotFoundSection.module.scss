@@ -1,0 +1,34 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+@import '@/styles/_abstract';
+
+.notfound{
+    padding-bottom: 120px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__info{
+        justify-self: center;
+        width: 400px;
+        position: relative;
+        flex-direction: column;
+        @extend %fCenter;
+
+        h1{
+            color: $textColor;
+            z-index: 1;
+            @include fontNormal(38px);
+        }
+        
+        p{
+            color: $textColor;
+            margin: 10px 0px 30px;
+            z-index: 1;
+            @include fontNormal(19px);
+        }
+    }
+
+    &__link{
+        z-index: 1;
+    }
+}

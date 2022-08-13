@@ -10,7 +10,7 @@ const fetchDelivery = createAsyncThunk(
     'info/fetchDelivery',
     async () => {
         const response = await Api.fetchDelivery()
-        return response.map((item, index) => ({select: index === 0 ? true : false, item}))
+        return response.map((item, index) => ({select: index === 0 ? true : false, item: { ...item, questions: item.questions.map((question, index) => ({...question, select: index === 0 ? true : false})) }}))
     }
 )
 

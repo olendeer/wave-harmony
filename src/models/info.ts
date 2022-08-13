@@ -20,6 +20,7 @@ export interface IContacts{
 export interface IDeliveryQuestion {
     name: string
     answer: string
+    select: boolean
 }
 
 export interface IDelivery{

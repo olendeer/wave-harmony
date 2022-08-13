@@ -9,4 +9,5 @@ export interface IButtonProps{
     size?: string
     style?: string
     onClick?: () => void
+    link?: string
 }

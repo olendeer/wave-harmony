@@ -1,0 +1,29 @@
+$gradients: ("1": rgba(249, 93, 149, 0.7), "2": rgba(93, 146, 249, 0.7), "3": rgba(199, 93, 249, 0.7), "4": rgba(93, 207, 249, 0.7));
+
+
+.background{
+    height: 100%;
+    width: 490px;
+    align-self: center;
+    right: 0px;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.gradient{
+
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    @each $num, $gradient in $gradients {
+        &:nth-child(#{$num}){
+            background:  $gradient;
+        }
+    }
+}

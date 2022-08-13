@@ -12,6 +12,7 @@ import { useData } from "@/hooks/useData"
 import { ITrust } from "@/models/trust"
 
 import styles from "./Trust.module.scss"
+import GradientBack from "@c/GradientBack/GradientBack"
 
 const Trust: FC = () => {
 	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
@@ -120,12 +121,7 @@ const Trust: FC = () => {
 						))}
 					</Swiper>
 
-					<div className={styles.card__background}>
-						<div className={styles.gradient}></div>
-						<div className={styles.gradient}></div>
-						<div className={styles.gradient}></div>
-						<div className={styles.gradient}></div>
-					</div>
+					<GradientBack />
 				</div>
 			</section>
 		</FullWidthLayout>

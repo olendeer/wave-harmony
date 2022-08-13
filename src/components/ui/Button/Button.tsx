@@ -1,5 +1,7 @@
 import { FC } from "react"
 
+import { Link } from "react-router-dom"
+
 import { IButtonProps } from "./types"
 import { useTheme } from "@/hooks/useTheme"
 
@@ -13,11 +15,27 @@ const Button: FC<IButtonProps> = ({
 	size = "normal",
 	padding,
 	className,
+	link = undefined,
 	...props
 }) => {
 	const theme = useTheme()
 
-	return (
+	return link ? (
+		<Link
+			to={link}
+			className={[
+				styles.button,
+				styles["button--" + mode],
+				styles["button--" + style],
+				styles["button--" + size],
+				className,
+				styles[theme],
+			].join(" ")}
+			style={{ height, minHeight: height, padding }}
+		>
+			<span>{children}</span>
+		</Link>
+	) : (
 		<button
 			className={[
 				styles.button,

@@ -40,7 +40,11 @@ export const finishAuthModalSelector = (state: RootState) => state.modal.finishA
 // info
 export const contactsSelector = (state: RootState) => state.info.contacts
 export const aboutSelector = (state: RootState) => state.info.about
+
 export const deliverySelector = (state: RootState) => state.info.delivery
+export const deliverySelectSelector = (state: RootState) => state.info.delivery.find(item => item.select)
+export const deliverySelectIndexSelector = (state: RootState) => state.info.delivery.findIndex(item => item.select)
+
 export const partnersSelector = (state: RootState) => state.info.partners
 
 
