@@ -1,0 +1,57 @@
+@import '@/styles/_abstract';
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+
+
+.certificates{
+    display: grid;
+    grid-template-columns: 1fr 540px;
+    padding-bottom: 120px;
+
+    &__image{
+        position: relative;
+        height: 510px;
+        @extend %fCenter;
+
+        svg{
+            width: 150%;
+            height: 150%;
+            z-index: 1;
+        }
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            color: $textColor;
+            margin-bottom: 15px;
+            @include fontNormal(38px);
+        }
+
+        p{
+            color: $textColorSecond;
+            @include fontNormal(19px);
+            margin-bottom: 40px;
+
+            b{
+                @include fontMedium(19px);
+            }
+        }
+
+        .input{
+            margin-bottom: 15px;
+        }
+
+        .button{
+            margin-top: 15px;
+        }
+
+    }
+}
+
+.gradient{
+    right: unset;
+}

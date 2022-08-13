@@ -5,6 +5,7 @@ import { ChangeEvent, Dispatch, ReactElement, ReactNode, SetStateAction } from "
 export type ChildrenProp = ReactElement | ReactElement[] | string | string[] | JSX.Element | ReactNode
 
 export type ChangeInput = (event: ChangeEvent<HTMLInputElement>) => void
+export type ChangeTextarea = (event: ChangeEvent<HTMLTextAreaElement>) => void
 
 export type PriceConvert = (value: number) => string
 export type SaleConvert = (value: number) => string

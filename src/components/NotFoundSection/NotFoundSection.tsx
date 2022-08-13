@@ -19,7 +19,7 @@ const NotFoundSection: FC = () => {
 						мы опросили каждого серфера на побережье, но никто из
 						них не знает куда уплыла эта страница
 					</p>
-					<Button link={"/"} className={styles.notfound__link}>
+					<Button link={"/catalog"} className={styles.notfound__link}>
 						Перейти в каталог
 					</Button>
 					<GradientBack />

@@ -1,4 +1,4 @@
-import { ChangeInput } from "@/shared/types"
+import { ChangeInput, ChangeTextarea } from "@/shared/types"
 import { DeepRequired, FieldErrorsImpl, UseFormHandleSubmit, UseFormReset } from "react-hook-form"
 
 export interface IAppFormField {
@@ -7,21 +7,25 @@ export interface IAppFormField {
     rules?: object
 } 
 
-export interface IAppFormFieldReturn {
+export interface IAppFormFieldReturn<T> {
     name: string
-    onChange: ChangeInput
+    onChange: T
 }
 
-export interface IAppFormFieldCheckboxReturn extends IAppFormFieldReturn{
+export interface IAppFormFieldCheckboxReturn extends IAppFormFieldReturn<ChangeInput>{
     value: boolean
 } 
 
-export interface IAppFormFieldInputReturn extends IAppFormFieldReturn{
+export interface IAppFormFieldInputReturn extends IAppFormFieldReturn<ChangeInput>{
+    value: string
+}
+
+export interface IAppFormFieldTextareaReturn extends IAppFormFieldReturn<ChangeTextarea>{
     value: string
 }
 
 export interface IAppFormFieldsReturn{
-    [k: string]: IAppFormFieldInputReturn | IAppFormFieldCheckboxReturn
+    [k: string]: IAppFormFieldInputReturn | IAppFormFieldCheckboxReturn | IAppFormFieldTextareaReturn
 }
 
 export type FormDataSubmitHandler<U extends IAppFormFieldsReturn> = {
@@ -49,4 +53,12 @@ export interface IRegisterForm extends IAppFormFieldsReturn{
 
 export interface IRemindForm extends IAppFormFieldsReturn{
     phone: IAppFormFieldInputReturn
+}
+
+export interface ICreateCertificateForm extends IAppFormFieldsReturn{
+    price: IAppFormFieldInputReturn
+    email: IAppFormFieldInputReturn
+    get_email: IAppFormFieldInputReturn
+    phone: IAppFormFieldInputReturn
+    message: IAppFormFieldTextareaReturn
 }

@@ -7,6 +7,7 @@ import About from "./views/About"
 import Contacts from "./views/Contacts"
 import Delivery from "./views/Delivery"
 import NotFound from "./views/NotFound"
+import Certificates from "./views/Certificates"
 
 import MainLayout from "@c/layouts/MainLayout/MainLayout"
 
@@ -22,6 +23,10 @@ const App: FC = () => {
 						<Route path="/about" element={<About />} />
 						<Route path="/contacts" element={<Contacts />} />
 						<Route path="/delivery-pay" element={<Delivery />} />
+						<Route
+							path="/certificates"
+							element={<Certificates />}
+						/>
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</MainLayout>

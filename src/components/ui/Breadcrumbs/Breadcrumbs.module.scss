@@ -4,6 +4,7 @@
 .breadcrumbs{
     display: flex;
     padding: 40px 0px 80px;
+    position: relative;
     
     &__item{
         color: $textColor;
