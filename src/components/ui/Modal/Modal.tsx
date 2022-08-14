@@ -23,6 +23,7 @@ const Modal: FC<IModalProps> = ({
 				" "
 			)}
 			onMouseDown={closeHandler}
+			onClick={stopPropagation}
 		>
 			<div
 				className={[styles.modal__content, className].join(" ")}

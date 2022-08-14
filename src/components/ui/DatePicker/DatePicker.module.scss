@@ -1,0 +1,66 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.datepicker{
+    height: 52px;
+    border-radius: 15px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid $borderInput;
+
+    &--focus{
+        border: 1px solid $iconGradientColor;
+    }
+
+    &--error{
+        border: 1px solid $themeColorRed;
+    }
+
+    &__label{
+        @include fontNormal(18px);
+        position: absolute;
+        z-index: 2;
+        left: 15px;
+        height: calc(100% - 2px);
+        display: flex;
+        align-items: center;
+        transition-duration: .1s;
+        color: $textColorPlaceholder;
+        cursor: text;
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $backgroundColorLight;
+            margin-top: 1px;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        span{
+            color: $themeColorRed;
+        }
+
+        &--focus{
+            @include fontNormal(14px);
+            height: 14px;
+            top: -8px;
+            padding: 0px 1px;
+
+            &::after{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__field{
+        padding: 0px 17px;
+        display: flex;
+        align-items: center;
+        color: $textColor;
+        @include fontNormal(16px);
+    }
+}

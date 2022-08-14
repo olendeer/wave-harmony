@@ -8,8 +8,12 @@
 @import "swiper/css/thumbs";
 @import "swiper/css/scrollbar";
 @import "swiper/css/effect-creative";
+@import 'react-calendar/dist/Calendar.css';
 
-@import './styles/variables';
+@import './styles/_variables';
+@import './styles/_mixins';
+@import './styles/_calendar';
+@import './styles/_slider';
 
 @import './assets/fonts/FuturaPT/stylesheet.scss';
 
@@ -42,31 +46,3 @@ a{
 	text-decoration: none;
 }
 
-
-.fade-slider{
-	.slick-slide{
-		opacity: 0;
-		transition-duration: .5s;
-		transform: scale(0);
-		&.slick-active{
-			opacity: 1;
-			transform: scale(1);
-		}
-	}
-}
-
-.swiper-trust {
-    width: 100%;
-    height: 100%;
-	.swiper-slide {
-		width: 150px;
-		height: 140px;
-	}
-}
-
-.swiper-scrollbar{
-	background: $borderPopup;
-	&-drag{
-		background: $borderInput;
-	}
-}

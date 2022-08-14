@@ -1,5 +1,7 @@
 import { ChildrenProp } from "@/shared/types";
 
+export type Type = 'submit' | 'reset' | 'button'
+
 export interface IButtonProps{
     children: ChildrenProp,
     mode?: string,
@@ -9,5 +11,6 @@ export interface IButtonProps{
     size?: string
     style?: string
     onClick?: () => void
+    type?: Type
     link?: string
 }

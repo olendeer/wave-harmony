@@ -6,10 +6,13 @@ export type ChildrenProp = ReactElement | ReactElement[] | string | string[] | J
 
 export type ChangeInput = (event: ChangeEvent<HTMLInputElement>) => void
 export type ChangeTextarea = (event: ChangeEvent<HTMLTextAreaElement>) => void
+export type ChangeDatepicker = (value: string) => void
 
 export type PriceConvert = (value: number) => string
 export type SaleConvert = (value: number) => string
 export type PriceWithSaleConvert = (value: number, sale: number) => string
+
+export type DateToDatepicker = (date: Date) => string
 
 export type IdsFromParamsGenerate = (ids: number[]) => string
 

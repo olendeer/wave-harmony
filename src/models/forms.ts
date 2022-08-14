@@ -1,4 +1,4 @@
-import { ChangeInput, ChangeTextarea } from "@/shared/types"
+import { ChangeDatepicker, ChangeInput, ChangeTextarea } from "@/shared/types"
 import { DeepRequired, FieldErrorsImpl, UseFormHandleSubmit, UseFormReset } from "react-hook-form"
 
 export interface IAppFormField {
@@ -24,8 +24,12 @@ export interface IAppFormFieldTextareaReturn extends IAppFormFieldReturn<ChangeT
     value: string
 }
 
+export interface IAppFormFieldDatepickerReturn extends IAppFormFieldReturn<ChangeDatepicker>{
+    value: string
+}
+
 export interface IAppFormFieldsReturn{
-    [k: string]: IAppFormFieldInputReturn | IAppFormFieldCheckboxReturn | IAppFormFieldTextareaReturn
+    [k: string]: IAppFormFieldInputReturn | IAppFormFieldCheckboxReturn | IAppFormFieldTextareaReturn | IAppFormFieldDatepickerReturn
 }
 
 export type FormDataSubmitHandler<U extends IAppFormFieldsReturn> = {
@@ -60,5 +64,6 @@ export interface ICreateCertificateForm extends IAppFormFieldsReturn{
     email: IAppFormFieldInputReturn
     get_email: IAppFormFieldInputReturn
     phone: IAppFormFieldInputReturn
+    date: IAppFormFieldDatepickerReturn
     message: IAppFormFieldTextareaReturn
 }

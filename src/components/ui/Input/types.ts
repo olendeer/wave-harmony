@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 
 export interface IInputProps{
     placeholder: string,
-    require?: true,
+    require?: boolean,
     defaultValue?: string,
     type: string,
     value: string,

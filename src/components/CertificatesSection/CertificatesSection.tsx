@@ -14,6 +14,7 @@ import { ReactComponent as Ruble } from "@/assets/svg/ruble-black.svg"
 
 import styles from "./CertificatesSection.module.scss"
 import Textarea from "@c/ui/Textarea/Textarea"
+import DatePicker from "@c/ui/DatePicker/DatePicker"
 
 const CertificatesSection: FC = () => {
 	const { errors, fields, reset, handleSubmit } =
@@ -36,6 +37,11 @@ const CertificatesSection: FC = () => {
 			{
 				name: "phone",
 				rules: { required: true, pattern: ValidationUtil.phone },
+				default: "",
+			},
+			{
+				name: "date",
+				rules: { required: true },
 				default: "",
 			},
 			{
@@ -71,6 +77,7 @@ const CertificatesSection: FC = () => {
 						type="text"
 						className={styles.input}
 						{...fields.price}
+						error={!!errors.price}
 						icon={<Ruble />}
 					/>
 					<Input
@@ -78,12 +85,14 @@ const CertificatesSection: FC = () => {
 						require={true}
 						type="text"
 						className={styles.input}
+						error={!!errors.email}
 						{...fields.email}
 					/>
 					<Input
 						placeholder="Email для получения сертификата"
 						type="text"
 						className={styles.input}
+						error={!!errors.get_email}
 						{...fields.get_email}
 					/>
 					<Input
@@ -91,14 +100,24 @@ const CertificatesSection: FC = () => {
 						require={true}
 						type="text"
 						className={styles.input}
+						error={!!errors.phone}
 						{...fields.phone}
+					/>
+					<DatePicker
+						placeholder="Дата отправки"
+						require={true}
+						className={styles.certificates__date}
+						error={!!errors.date}
+						{...fields.date}
 					/>
 					<Textarea
 						placeholder="Введите текст поздравления, которое увидит получатель"
 						{...fields.message}
 					/>
 
-					<Button className={styles.button}>Перейти к оплате</Button>
+					<Button className={styles.button} type="submit">
+						Перейти к оплате
+					</Button>
 				</form>
 			</section>
 		</ContainerLayout>

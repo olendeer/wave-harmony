@@ -14,6 +14,7 @@ const Button: FC<IButtonProps> = ({
 	height,
 	size = "normal",
 	padding,
+	type = "button",
 	className,
 	link = undefined,
 	...props
@@ -37,6 +38,7 @@ const Button: FC<IButtonProps> = ({
 		</Link>
 	) : (
 		<button
+			type={type}
 			className={[
 				styles.button,
 				styles["button--" + mode],

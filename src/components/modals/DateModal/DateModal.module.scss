@@ -1,0 +1,60 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.modal{
+    padding: 0px;
+    width: 375px;
+    min-width: 375px;
+}
+
+.datemodal{
+    display: grid;
+
+    &__header{
+        height: 46px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        border-bottom: 1px solid $borderPopup;
+        color: $textColor;
+        @include fontMedium(18px);
+    }
+
+    &__calendar{
+        padding: 25px 20px 35px;
+    }
+
+    &__checkbox{
+        padding: 25px 20px;
+        border-top: 1px solid $borderPopup;
+        border-bottom: 1px solid $borderPopup;
+    }
+
+    &__button{
+        display: grid;
+        padding: 20px;
+    }
+}
+
+.calendar{
+
+    border: none !important;
+    width: 335px !important;
+
+    &__arrow{
+        position: static !important;
+        
+        &--left{
+            transform: rotate(180deg);
+        }
+
+        path{
+            stroke: $iconGradientColor;
+        }
+    }
+
+    &__item{
+        color: $textColor;
+        @include fontNormal(18px);
+    }
+}
