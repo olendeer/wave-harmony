@@ -1,0 +1,33 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.sort{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &--open{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+
+    svg{
+        transition-duration: .2s;
+    }
+
+    &__title{
+        margin-right: 7px;
+        color: $textColor;
+        @include fontNormal(17px);
+    }
+
+    &__body{
+        padding-bottom: 38px;
+    }
+
+    &__submit{
+        height: 44px !important;
+    }
+}

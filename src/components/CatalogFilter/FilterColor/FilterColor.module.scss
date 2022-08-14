@@ -1,0 +1,32 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+$colors: ('red': #F56262, 'blue': #62B8F5, 'violet' : #F262F5, 'lightgreen' : #88F562, 'orange' : #F5BB62, 'black' : #303030, 'grey' : #D8D8D8, 'pink': #FF1FC0, 'beige': #F7E6BD, 'green' : #55CB6F, 'white' : #FFFFFF, 'multiply' : linear-gradient(90deg, #FFD600 0%, #C97F0F 14.13%, #80BB1F 29.77%, #2E9B67 46.42%, #394CB1 63.57%, #C216C6 80.22%, #FF0D0D 96.88%));
+
+.filter{
+    min-width: 333px;
+    @include sortPopup;
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @each $selector, $color in $colors {
+            &--#{$selector}{
+                .filter__color{
+                    background:  $color;
+                    border: 1px solid transparent;
+                    border-color: if($selector == 'white', $textColorPlaceholder, transparent);
+                }
+            }
+        }
+
+        .filter__color{
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+    }
+}

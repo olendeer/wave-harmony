@@ -9,6 +9,7 @@ import * as modalActions from './slices/modalSlice'
 import * as userActionsAsync from './api/userApi'
 import * as infoActionsAsync from './api/infoApi'
 import * as infoActions from './slices/infoSlice'
+import * as filterActions from './slices/filterSlice'
 
 
 const actions = {
@@ -22,7 +23,8 @@ const actions = {
     ...modalActions.actions,
     ...userActionsAsync,
     ...infoActions.actions,
-    ...infoActionsAsync
+    ...infoActionsAsync,
+    ...filterActions.actions
 }
 
 

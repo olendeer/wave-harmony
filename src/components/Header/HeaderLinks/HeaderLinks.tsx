@@ -41,11 +41,6 @@ const HeaderLinks: FC<IHeaderLinksProps> = ({ collapse }) => {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={styles.link} to="/feedback">
-						Отзывы
-					</NavLink>
-				</li>
-				<li>
 					<NavLink className={styles.link} to="/create">
 						Создай свой купальник
 					</NavLink>

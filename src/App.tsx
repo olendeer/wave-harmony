@@ -9,6 +9,7 @@ import Delivery from "./views/Delivery"
 import NotFound from "./views/NotFound"
 import Certificates from "./views/Certificates"
 import Sizes from "./views/Sizes"
+import Catalog from "./views/Catalog"
 
 import MainLayout from "@c/layouts/MainLayout/MainLayout"
 
@@ -29,6 +30,7 @@ const App: FC = () => {
 							element={<Certificates />}
 						/>
 						<Route path="/sizes" element={<Sizes />} />
+						<Route path="/catalog" element={<Catalog />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</MainLayout>

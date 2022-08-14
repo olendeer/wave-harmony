@@ -48,5 +48,6 @@ export const deliverySelectIndexSelector = (state: RootState) => state.info.deli
 
 export const partnersSelector = (state: RootState) => state.info.partners
 
-
+//filter
+export const viewSelector = (state: RootState) => state.filter.view
 

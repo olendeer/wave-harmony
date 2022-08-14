@@ -1,0 +1,19 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.filter{
+    min-width: 333px;
+    color: $textColor;
+    display: flex;
+    flex-direction: column;
+    @include fontNormal(16px);
+
+    &__link{
+        color: $textColor;
+        margin-bottom: 5px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

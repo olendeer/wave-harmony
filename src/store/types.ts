@@ -50,3 +50,12 @@ export interface IInfoSlice{
     delivery: { select: boolean, item: IDelivery }[]
     partners: IPartner[]
 }
+
+
+
+export type View = 2 | 3 | 4
+
+export interface IFilterSlice{
+    view: View
+
+}

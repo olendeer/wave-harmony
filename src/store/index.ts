@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import appSlice from './slices/appSlice';
+import filterSlice from './slices/filterSlice';
 import gallerySlice from './slices/gallerySlice';
 import infoSlice from './slices/infoSlice';
 import mainSliderSlice from './slices/mainSliderSlice';
@@ -22,7 +23,8 @@ const store = configureStore({
         gallery: gallerySlice,
         app: appSlice,
         modal: modalSlice,
-        info: infoSlice
+        info: infoSlice,
+        filter: filterSlice
         // router: connectRouter<History>(history)
     },
     // middleware: (getDefaultMiddleware) =>  getDefaultMiddleware().concat(routerMiddleware(history))
