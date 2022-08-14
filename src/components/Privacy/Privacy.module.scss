@@ -1,0 +1,40 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.privacy{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 110px;
+    width: 550px;
+    background: rgba(44, 44, 44, 0.95);
+    display: grid;
+    grid-auto-flow: column;
+    padding: 38px 40px 0px 40px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: .2s;
+
+    &--open{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    p{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: -5px;
+        color: $backgroundColorLight;
+        @include fontNormal(18px);
+
+        a{
+            color: $backgroundColorLight;
+            text-decoration: underline;
+        }
+    }
+
+    svg{
+        min-width: 24px;
+    }
+}

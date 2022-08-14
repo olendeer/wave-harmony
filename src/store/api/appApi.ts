@@ -17,8 +17,10 @@ const init = createAsyncThunk(
     async (_, { rejectWithValue, dispatch }) => {
         // get theme
         try{
-            const id = Storage.getUser()
+            const cookie = Storage.getCookie()
+            dispatch(actions.changeOpenCookie(!cookie))
 
+            const id = Storage.getUser()
             if(id) {
                 const response = await Api.fetchUserById(id)
                 Storage.setWishList(response.wishList)
@@ -30,6 +32,19 @@ const init = createAsyncThunk(
         } catch (e) {
             return rejectWithValue(null)
         }
+    }
+)
+
+const setIsCheckCookie = createAsyncThunk(
+    'app/setIsCheckCookie',
+    async (_, { dispatch }) => {
+        try{
+            Storage.setCookie(true)
+            dispatch(actions.changeOpenCookie(false))
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 )
 
@@ -96,4 +111,4 @@ const changeLang = createAsyncThunk(
 )
 
 
-export { init, changeLang, toggleProductToWishList, removeProductsFromWishList }
+export { init, changeLang, toggleProductToWishList, removeProductsFromWishList, setIsCheckCookie }

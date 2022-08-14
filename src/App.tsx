@@ -8,6 +8,7 @@ import Contacts from "./views/Contacts"
 import Delivery from "./views/Delivery"
 import NotFound from "./views/NotFound"
 import Certificates from "./views/Certificates"
+import Sizes from "./views/Sizes"
 
 import MainLayout from "@c/layouts/MainLayout/MainLayout"
 
@@ -27,6 +28,7 @@ const App: FC = () => {
 							path="/certificates"
 							element={<Certificates />}
 						/>
+						<Route path="/sizes" element={<Sizes />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</MainLayout>

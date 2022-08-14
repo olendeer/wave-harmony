@@ -8,7 +8,8 @@ const initialState: IModalSlice = {
     register: false,
     remind: false,
     wishList: false,
-    finishAuth: false
+    finishAuth: false,
+    cookie: false
 }
 
 const modalSlice = createSlice({
@@ -36,6 +37,9 @@ const modalSlice = createSlice({
         changeOpenFinishAuth(state, action: PayloadAction<boolean>) {
             state.finishAuth = action.payload
             state.auth = false
+        },
+        changeOpenCookie(state, action: PayloadAction<boolean>){
+            state.cookie = action.payload
         }
     },
     extraReducers(builder) {

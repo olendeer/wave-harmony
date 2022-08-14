@@ -9,6 +9,9 @@ export interface IAppStorage {
     getUser: () => number | null
     setWishList: (wishlist: number[]) => void
     getWishList: () => number[]
+    setCookie: (isCheck: boolean) => void
+    getCookie: () => boolean
+    
 }
 
 

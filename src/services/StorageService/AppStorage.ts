@@ -17,6 +17,13 @@ class AppStorage extends Storage<IAppStorage> implements IAppStorage {
         return wishList ? JSON.parse(wishList) : []
     }
 
+    setCookie = (isCheck: boolean) => this.client.setItem('cookie', JSON.stringify(isCheck))
+    
+    getCookie = () => {
+        const cookie = this.client.getItem('cookie')
+        return cookie && cookie === 'true' ? true : false
+    }
+
 }
 
 export { AppStorage }

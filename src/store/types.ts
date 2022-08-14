@@ -37,6 +37,7 @@ export interface IModalSlice{
     remind: boolean
     wishList: boolean
     finishAuth: boolean
+    cookie: boolean
 }
 
 export interface IUserSlice {

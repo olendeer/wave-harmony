@@ -1,0 +1,42 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+
+.sizes{
+    padding: 65px 70px 75px;
+    border-radius: 30px;
+    border: 1px solid $borderPopup;
+    display: flex;
+    flex-direction: column;
+
+    &__header{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-bottom: 10px;
+        justify-items: center;
+
+        span{
+            color: $textColor;
+            @include fontMedium(19px);
+        }
+    }
+
+    &__item{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-bottom: 1px dashed $borderInput;
+        padding: 10px 0px;
+        justify-items: center;
+
+        transition-duration: .2s;
+
+        &:hover{
+            background: $backgroundGrey;
+        }
+
+        span{
+            color: $textColor;
+            @include fontNormal(19px);
+        }
+    }
+}
