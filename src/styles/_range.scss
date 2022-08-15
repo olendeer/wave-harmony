@@ -1,0 +1,108 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+
+.input-range{
+    height: 1rem;
+    position: relative;
+    width: 100%;
+
+    &--disabled{
+
+        .input-range__track {
+            background: #eeeeee; 
+        }
+
+        .input-range__slider {
+            background: #cccccc;
+            border: 1px solid #cccccc;
+            box-shadow: none;
+            transform: none; 
+        }
+    } 
+
+
+    &__track {
+        background: #E3E3E3;
+        border-radius: 1px;
+        cursor: pointer;
+        display: block;
+        height: 2px;
+        position: relative;
+        // transition: left 0.1s ease-out, width 0.1s ease-out; 
+
+        &--background {
+            left: 0;
+            margin-top: -0.15rem;
+            position: absolute;
+            right: 0;
+            top: 50%; 
+        }
+
+        &--active {
+            background: $buttonColor;
+        }
+    }
+
+    &__slider {
+        appearance: none;
+        background: $buttonColor;
+        border-radius: 100%;
+        cursor: pointer;
+        display: block;
+        height: 18px;
+        width: 18px;
+        margin-left: -0.5rem;
+        margin-top: -0.65rem;
+        outline: none;
+        position: absolute;
+        top: 50%;
+        transition: outline .3s;
+        // transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+        outline: 0px solid rgba($iconGradientColor, .2);
+
+        // &-container {
+            // transition: left 0.1s ease-out; 
+        // }
+
+        &:active {
+            // transform: scale(1.3);
+            outline-width: 3px;
+
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); 
+        }
+    }
+
+    // &__label {
+        // color: #aaaaaa;
+        // font-family: "Helvetica Neue", san-serif;
+        // font-size: 0.8rem;
+        // transform: translateZ(0);
+        // white-space: nowrap; 
+    // }
+}
+
+
+//   .input-range__label--min,
+//   .input-range__label--max {
+//     bottom: -1.4rem;
+//     position: absolute; }
+  
+//   .input-range__label--min {
+//     left: 0; }
+  
+//   .input-range__label--max {
+//     right: 0; }
+  
+//   .input-range__label--value {
+//     position: absolute;
+//     top: -1.8rem; }
+  
+//   .input-range__label-container {
+//     left: -50%;
+//     position: relative; }
+//     .input-range__label--max .input-range__label-container {
+//       left: 50%; }

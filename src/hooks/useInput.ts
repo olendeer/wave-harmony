@@ -7,11 +7,14 @@ export const useInput = (defaultValue: string) => {
 
     const onChange: ChangeInput = event => setValue(event.target.value)
 
+    const setValueHandler = (value: string) => setValue(value)
+
     const clear = () => setValue('')
 
     return {
         value,
         clear,
+        setValue: setValueHandler,
         bind: {
             value,
             onChange

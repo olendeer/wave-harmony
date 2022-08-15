@@ -1,0 +1,27 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.nav{
+    display: flex;
+    flex-direction: column;
+
+    &__header{
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        @include fontMedium(14px);
+    }
+    
+    &__list{
+        padding-left: 20px;
+        @include fontNormal(17px);
+
+        li{
+            cursor: pointer;
+            margin-bottom: 10px;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

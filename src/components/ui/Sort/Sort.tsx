@@ -7,6 +7,7 @@ import { ReactComponent as Arrow } from "@/assets/svg/arrow-down.svg"
 
 import styles from "./Sort.module.scss"
 import Button from "../Button/Button"
+import { useActions } from "@/store/hooks"
 
 const Sort: FC<ISortProps> = ({
 	title,
@@ -14,6 +15,8 @@ const Sort: FC<ISortProps> = ({
 	onChange = () => {},
 	className,
 }) => {
+	const { fetchProductsByFilter } = useActions()
+
 	const [isOpen, changeOpen] = useState<boolean>(false)
 
 	const changeOpenHandler = () => changeOpen((prev) => !prev)
@@ -34,8 +37,9 @@ const Sort: FC<ISortProps> = ({
 					size="small"
 					className={styles.sort__submit}
 					onClick={() => {
-						onChange()
 						changeOpen(false)
+						onChange()
+						fetchProductsByFilter()
 					}}
 				>
 					Применить

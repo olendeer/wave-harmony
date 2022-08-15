@@ -47,6 +47,7 @@
         @include fontNormal(16px);
         height: 100%;
         flex: 1 0 0;
+        width: 100%;
         color: $textColor;
 
         &[data-icon="true"]{

@@ -4,18 +4,22 @@ import Sort from "@c/ui/Sort/Sort"
 
 import Checkbox from "@c/ui/Checkbox/Checkbox"
 
+import { FilterSizeType } from "@/store/types"
+
+import { useActions } from "@/store/hooks"
+
 import styles from "./FilterSizes.module.scss"
 
 const FilterSizes: FC = () => {
-	const [value, setValue] = useState<string>("")
+	const { changeFilter } = useActions()
 
-	const changeValue = (value: string) => {
+	const [value, setValue] = useState<FilterSizeType>(null)
+
+	const changeValue = (value: FilterSizeType) => {
 		setValue(value)
 	}
 
-	const applyValue = () => {
-		//save to store
-	}
+	const applyValue = () => changeFilter({ size: value })
 
 	return (
 		<Sort title={"Размер"} className={styles.filter} onChange={applyValue}>

@@ -27,4 +27,12 @@ const fetchWishProducts = createAsyncThunk(
     }
 )
 
-export { fetchProducts, fetchPopularProducts, fetchWishProducts }
+const fetchProductsByFilter = createAsyncThunk(
+    'products/fetchProductsByFilter',
+    async (_, { getState }) => {
+        const filters = (getState() as RootState).filter
+        return await Api.fetchProducts()
+    }
+)
+
+export { fetchProducts, fetchPopularProducts, fetchWishProducts, fetchProductsByFilter }

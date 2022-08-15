@@ -12,7 +12,11 @@ const Popup: FC<IPopupProps> = ({ title, children, isOpen, changeOpen }) => {
 	const { closeHandler } = useOutClick(isOpen, changeOpen)
 
 	return (
-		<div className={styles.popup} onClick={stopPropagation}>
+		<div
+			className={styles.popup}
+			onMouseDown={stopPropagation}
+			onClick={stopPropagation}
+		>
 			<div
 				className={[
 					styles["popup-content"],

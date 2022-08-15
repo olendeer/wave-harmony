@@ -20,9 +20,96 @@
     position: relative;
     overflow: hidden;
 
+    &--smallest{
+        width: 270px;
+        height: 510px;
+    }
+
     &--small{
         width: 335px;
         height: 610px;
+    }
+
+    &--middle{
+        width: 360px;
+        height: 640px;
+    }
+
+    &--big{
+        width: 550px;
+        height: 930px;
+    }
+
+
+    &__slider{
+        
+        &-wrapper{
+            width: 100%;
+            position: relative;
+        }
+
+        &-nav{
+            position: absolute;
+            right: 0px;
+            height: 80px;
+            width: 45px;
+            right: 0;
+            top: calc(50% - 40px);
+            background: rgba(227, 227, 227, 0.8);
+            transition-duration: .2s;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            @extend %fCenter;
+
+            svg{
+                width: 10px;
+                height: 17px;
+            }
+
+            &:hover{
+                background: rgb(173, 172, 172);
+            }
+
+            &--prev{
+                right: unset;
+                left: 0;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                
+                svg{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &-dots{
+            position: absolute;
+            top: -26px;
+            left: 20px;
+            display: flex !important;
+            align-items: center;
+            column-gap: 10px;
+            z-index: 3;
+        }
+
+        &-dot{
+            width: 15px;
+            height: 6px;
+            border-radius: 2px;
+            background: rgba($textColor, 0.25);
+            cursor: pointer;
+            transition-duration: .2s;
+
+            &:hover{
+                background: $textColor;
+            }
+
+            &--active{
+                background: $textColor;
+            }
+        }
     }
 
     &:hover{

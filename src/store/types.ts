@@ -53,9 +53,27 @@ export interface IInfoSlice{
 
 
 
+
 export type View = 2 | 3 | 4
+export type SortType = 'from_cheap' | 'from_expensive' | 'by_relevance' | 'at_discount' | null
+export type FilterAvailabilityType = 'in_stock' | 'out_in_stock' | null
+export type FilterColorType = 'red' | 'blue' | 'violet' | 'lightgreen' | 'orange' | 'black' | 'grey' | 'pink' | 'beige' | 'green' | 'white' | 'multiply'
+export type FilterStyleType = 'separate' | 'conjoint' | 'overall' | 'longsleeve' | null
+export type FilterSleevesType = 'sleeveless' | 'long_sleeve' | 'short_sleeve' | null
+export type FilterSizeType = 'xs' | 's' | 'm' | 'l' | null
 
 export interface IFilterSlice{
-    view: View
-
+    view: View,
+    sort: SortType
+    filter: {
+        availability: FilterAvailabilityType
+        color: FilterColorType
+        style: FilterStyleType
+        sleeves: FilterSleevesType
+        size: FilterSizeType
+        price: {
+            min: number
+            max: number
+        }
+    }
 }

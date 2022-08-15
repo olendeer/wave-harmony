@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IProductSlice } from '../types'
 
-import { fetchProducts, fetchPopularProducts, fetchWishProducts } from '../api/productApi'
+import { fetchProducts, fetchPopularProducts, fetchWishProducts, fetchProductsByFilter } from '../api/productApi'
 import { IProduct } from '@/models/product'
 import { removeProductsFromWishList, toggleProductToWishList } from '../api/appApi'
 
@@ -43,6 +43,9 @@ const productSlice = createSlice({
         })
         .addCase(fetchProducts.rejected, (state, action) => {
 
+        })
+        .addCase(fetchProductsByFilter.fulfilled, (state, action) => {
+            state.products = action.payload
         })
         .addCase(fetchPopularProducts.fulfilled, (state, action) => {
             state.productsPopular = action.payload

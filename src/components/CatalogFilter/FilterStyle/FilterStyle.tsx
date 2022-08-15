@@ -3,18 +3,21 @@ import { FC, useState } from "react"
 import Sort from "@c/ui/Sort/Sort"
 import Checkbox from "@c/ui/Checkbox/Checkbox"
 
+import { FilterStyleType } from "@/store/types"
+import { useActions } from "@/store/hooks"
+
 import styles from "./FilterStyle.module.scss"
 
 const FilterStyle: FC = () => {
-	const [value, setValue] = useState<string>("")
+	const { changeFilter } = useActions()
 
-	const changeValue = (value: string) => {
+	const [value, setValue] = useState<FilterStyleType>(null)
+
+	const changeValue = (value: FilterStyleType) => {
 		setValue(value)
 	}
 
-	const applyValue = () => {
-		//save to store
-	}
+	const applyValue = () => changeFilter({ style: value })
 
 	return (
 		<Sort title={"Фасон"} className={styles.filter} onChange={applyValue}>

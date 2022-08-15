@@ -11,6 +11,7 @@ import FilterAvailability from "./FilterAvailability/FilterAvailability"
 import FilterSizes from "./FilterSizes/FilterSizes"
 import FilterStyle from "./FilterStyle/FilterStyle"
 import FilterPopular from "./FilterPopular/FilterPopular"
+import FilterPrice from "./FilterPrice/FilterPrice"
 import FilterColor from "./FilterColor/FilterColor"
 
 import styles from "./CatalogFilter.module.scss"
@@ -32,7 +33,7 @@ const CatalogFilter: FC = () => {
 						<FilterStyle />
 						<FilterSleeves />
 						<FilterSizes />
-						{/*  <Sort title="Стоимость" /> */}
+						<FilterPrice />
 						<FilterPopular />
 					</div>
 					<div className={styles.view}>

@@ -4,18 +4,21 @@ import Sort from "@c/ui/Sort/Sort"
 
 import Checkbox from "@c/ui/Checkbox/Checkbox"
 
+import { useActions } from "@/store/hooks"
+import { FilterAvailabilityType } from "@/store/types"
+
 import styles from "./FilterAvailability.module.scss"
 
 const FilterAvailability: FC = () => {
-	const [value, setValue] = useState<string>("")
+	const { changeFilter } = useActions()
 
-	const changeValue = (value: string) => {
+	const [value, setValue] = useState<FilterAvailabilityType>(null)
+
+	const changeValue = (value: FilterAvailabilityType) => {
 		setValue(value)
 	}
 
-	const applyValue = () => {
-		//save to store
-	}
+	const applyValue = () => changeFilter({ availability: value })
 
 	return (
 		<Sort title={"Наличие"} className={styles.filter} onChange={applyValue}>

@@ -1,0 +1,22 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.filter{
+    padding-top: 30px;
+
+    &__fields{
+        display: flex;
+        align-items: center;
+        margin-bottom: 36px;
+
+        span{
+            margin: 0px 7px;
+            color: $borderInput;
+            @include fontNormal(16px);
+        }
+    }
+}
+
+.field{
+    width: 157px;
+}

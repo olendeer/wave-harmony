@@ -4,18 +4,22 @@ import Sort from "@c/ui/Sort/Sort"
 
 import Checkbox from "@c/ui/Checkbox/Checkbox"
 
+import { FilterSleevesType } from "@/store/types"
+
+import { useActions } from "@/store/hooks"
+
 import styles from "./FilterSleeves.module.scss"
 
 const FilterSleeves: FC = () => {
-	const [value, setValue] = useState<string>("")
+	const { changeFilter } = useActions()
 
-	const changeValue = (value: string) => {
+	const [value, setValue] = useState<FilterSleevesType>(null)
+
+	const changeValue = (value: FilterSleevesType) => {
 		setValue(value)
 	}
 
-	const applyValue = () => {
-		//save to store
-	}
+	const applyValue = () => changeFilter({ sleeves: value })
 
 	return (
 		<Sort title={"Рукава"} className={styles.filter} onChange={applyValue}>
