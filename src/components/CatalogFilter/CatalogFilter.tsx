@@ -1,8 +1,9 @@
 import { FC } from "react"
 
 import { useActions, useAppSelector } from "@/store/hooks"
-import { viewSelector } from "@/store/selectors"
+import { isFilterSelector, viewSelector } from "@/store/selectors"
 
+import Button from "@c/ui/Button/Button"
 import FullWidthLayout from "@c/layouts/FullWidthLayout/FullWidthLayout"
 
 import FilterSort from "./FilterSort/FilterSort"
@@ -19,7 +20,9 @@ import styles from "./CatalogFilter.module.scss"
 const CatalogFilter: FC = () => {
 	const view = useAppSelector(viewSelector)
 
-	const { changeView } = useActions()
+	const isFilter = useAppSelector(isFilterSelector)
+
+	const { changeView, resetFilter } = useActions()
 
 	return (
 		<FullWidthLayout className={styles.wrapper}>
@@ -58,6 +61,18 @@ const CatalogFilter: FC = () => {
 						</span>
 					</div>
 				</div>
+				{isFilter && (
+					<div className={styles.filters}>
+						<Button
+							style={"warning"}
+							mode={"stroke"}
+							size={"small"}
+							onClick={() => resetFilter()}
+						>
+							Сбросить все
+						</Button>
+					</div>
+				)}
 			</div>
 		</FullWidthLayout>
 	)

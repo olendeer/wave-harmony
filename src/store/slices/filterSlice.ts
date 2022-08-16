@@ -7,10 +7,10 @@ const initialState: IFilterSlice = {
     sort: null,
     filter: {
         availability: null,
-        color: 'multiply',
+        color: [],
         style: null,
         sleeves: null,
-        size: null,
+        size: [],
         price: {
             min: 0,
             max: 20000
@@ -31,6 +31,10 @@ const filterSlice = createSlice({
         changeFilter(state, action: PayloadAction<{ [k in keyof IFilterSlice['filter']]?: IFilterSlice['filter'][k] }>){
             state.filter = { ...state.filter, ...action.payload }
         },
+        resetFilter(state){
+            state.filter = initialState.filter
+            state.sort = initialState.sort
+        }
     },
     extraReducers: (builder) => {
         // builder

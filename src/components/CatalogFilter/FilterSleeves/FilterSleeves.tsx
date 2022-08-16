@@ -1,4 +1,4 @@
-import { FC, useState } from "react"
+import { FC, useEffect, useState } from "react"
 
 import Sort from "@c/ui/Sort/Sort"
 
@@ -6,12 +6,15 @@ import Checkbox from "@c/ui/Checkbox/Checkbox"
 
 import { FilterSleevesType } from "@/store/types"
 
-import { useActions } from "@/store/hooks"
+import { sleevesFilterSelector } from "@/store/selectors"
+import { useActions, useAppSelector } from "@/store/hooks"
 
 import styles from "./FilterSleeves.module.scss"
 
 const FilterSleeves: FC = () => {
 	const { changeFilter } = useActions()
+
+	const filter = useAppSelector(sleevesFilterSelector)
 
 	const [value, setValue] = useState<FilterSleevesType>(null)
 
@@ -20,6 +23,10 @@ const FilterSleeves: FC = () => {
 	}
 
 	const applyValue = () => changeFilter({ sleeves: value })
+
+	useEffect(() => {
+		setValue(filter)
+	}, [filter])
 
 	return (
 		<Sort title={"Рукава"} className={styles.filter} onChange={applyValue}>

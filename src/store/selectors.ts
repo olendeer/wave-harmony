@@ -51,3 +51,27 @@ export const partnersSelector = (state: RootState) => state.info.partners
 //filter
 export const viewSelector = (state: RootState) => state.filter.view
 
+export const sortSelector = (state: RootState) => state.filter.sort
+export const isSortSelector = (state: RootState) => state.filter.sort !== null
+
+export const availabilityFilterSelector = (state: RootState) => state.filter.filter.availability
+export const IsAvailabilityFilterSelector = (state: RootState) => state.filter.filter.availability !== null
+export const colorFilterSelector = (state: RootState) => state.filter.filter.color
+export const IsColorFilterSelector = (state: RootState) => state.filter.filter.color.length > 0
+export const styleFilterSelector = (state: RootState) => state.filter.filter.style
+export const IsStyleFilterSelector = (state: RootState) => state.filter.filter.style !== null
+export const sleevesFilterSelector = (state: RootState) => state.filter.filter.sleeves
+export const IsSleevesFilterSelector = (state: RootState) => state.filter.filter.sleeves !== null
+export const sizeFilterSelector = (state: RootState) => state.filter.filter.size
+export const IsSizeFilterSelector = (state: RootState) => state.filter.filter.size.length > 0
+export const priceFilterSelector = (state: RootState) => state.filter.filter.price
+export const IsPriceFilterSelector = (state: RootState) => {
+    const price = state.filter.filter.price
+    if(price.min !== 0 || price.max !== 20000) return true
+    return false
+}
+
+export const isFilterSelector = createSelector(
+    [isSortSelector, IsAvailabilityFilterSelector, IsColorFilterSelector, IsStyleFilterSelector, IsSleevesFilterSelector, IsSizeFilterSelector, IsPriceFilterSelector],
+    (...isFilters) => isFilters.find(item => item === true)
+)

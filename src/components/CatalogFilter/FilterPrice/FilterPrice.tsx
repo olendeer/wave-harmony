@@ -7,12 +7,15 @@ import Sort from "@c/ui/Sort/Sort"
 import Input from "@c/ui/Input/Input"
 
 import { useInput } from "@/hooks/useInput"
-import { useActions } from "@/store/hooks"
+import { useActions, useAppSelector } from "@/store/hooks"
+import { priceFilterSelector } from "@/store/selectors"
 
 import styles from "./FilterPrice.module.scss"
 
 const FilterPrice: FC = () => {
 	const { changeFilter } = useActions()
+
+	const filter = useAppSelector(priceFilterSelector)
 
 	const [value, setValue] = useState<RangeType>({ min: 0, max: 20000 })
 
@@ -26,6 +29,11 @@ const FilterPrice: FC = () => {
 		const max = +to.value > 20000 ? 20000 : +to.value
 		setValue({ min, max })
 	}, [from.value, to.value])
+
+	useEffect(() => {
+		from.setValue(filter.min.toString())
+		to.setValue(filter.max.toString())
+	}, [filter])
 
 	return (
 		<Sort

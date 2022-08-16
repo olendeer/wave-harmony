@@ -1,23 +1,34 @@
-import { FC, useState } from "react"
+import { FC, useEffect, useState } from "react"
 
 import Sort from "@c/ui/Sort/Sort"
 import Checkbox from "@c/ui/Checkbox/Checkbox"
 
-import { useActions } from "@/store/hooks"
+import { useActions, useAppSelector } from "@/store/hooks"
 import { FilterColorType } from "@/store/types"
 
 import styles from "./FilterColor.module.scss"
+import { colorFilterSelector } from "@/store/selectors"
 
 const FilterColor: FC = () => {
 	const { changeFilter } = useActions()
 
-	const [value, setValue] = useState<FilterColorType>("multiply")
+	const filter = useAppSelector(colorFilterSelector)
+
+	const [value, setValue] = useState<FilterColorType[]>([])
 
 	const changeValue = (value: FilterColorType) => {
-		setValue(value)
+		setValue((prev) =>
+			prev.includes(value)
+				? prev.filter((item) => item !== value)
+				: [...prev, value]
+		)
 	}
 
 	const applyValue = () => changeFilter({ color: value })
+
+	useEffect(() => {
+		setValue(filter)
+	}, [filter])
 
 	return (
 		<Sort title={"Цвет"} className={styles.filter} onChange={applyValue}>
@@ -29,7 +40,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Красный"
-					checked={value === "red"}
+					checked={value.includes("red")}
 					onChange={() => changeValue("red")}
 					className={styles.filter__checkbox}
 				/>
@@ -43,7 +54,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Синий"
-					checked={value === "blue"}
+					checked={value.includes("blue")}
 					onChange={() => changeValue("blue")}
 					className={styles.filter__checkbox}
 				/>
@@ -57,7 +68,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Фиолетовый"
-					checked={value === "violet"}
+					checked={value.includes("violet")}
 					onChange={() => changeValue("violet")}
 					className={styles.filter__checkbox}
 				/>
@@ -71,7 +82,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Светло-зеленый"
-					checked={value === "lightgreen"}
+					checked={value.includes("lightgreen")}
 					onChange={() => changeValue("lightgreen")}
 					className={styles.filter__checkbox}
 				/>
@@ -85,7 +96,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Оранжевый"
-					checked={value === "orange"}
+					checked={value.includes("orange")}
 					onChange={() => changeValue("orange")}
 					className={styles.filter__checkbox}
 				/>
@@ -99,7 +110,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Черный"
-					checked={value === "black"}
+					checked={value.includes("black")}
 					onChange={() => changeValue("black")}
 					className={styles.filter__checkbox}
 				/>
@@ -113,7 +124,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Серый"
-					checked={value === "grey"}
+					checked={value.includes("grey")}
 					onChange={() => changeValue("grey")}
 					className={styles.filter__checkbox}
 				/>
@@ -127,7 +138,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Розовый"
-					checked={value === "pink"}
+					checked={value.includes("pink")}
 					onChange={() => changeValue("pink")}
 					className={styles.filter__checkbox}
 				/>
@@ -141,7 +152,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Бежевый"
-					checked={value === "beige"}
+					checked={value.includes("beige")}
 					onChange={() => changeValue("beige")}
 					className={styles.filter__checkbox}
 				/>
@@ -155,7 +166,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Зеленый"
-					checked={value === "green"}
+					checked={value.includes("green")}
 					onChange={() => changeValue("green")}
 					className={styles.filter__checkbox}
 				/>
@@ -169,7 +180,7 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Белый"
-					checked={value === "white"}
+					checked={value.includes("white")}
 					onChange={() => changeValue("white")}
 					className={styles.filter__checkbox}
 				/>
@@ -183,8 +194,8 @@ const FilterColor: FC = () => {
 			>
 				<Checkbox
 					title="Разноцветный"
-					checked={value === "multiply"}
-					onChange={() => changeValue("multiply")}
+					checked={value.length === 0}
+					onChange={() => setValue([])}
 					className={styles.filter__checkbox}
 				/>
 				<span className={styles.filter__color}></span>

@@ -1,16 +1,19 @@
-import { FC, useState } from "react"
+import { FC, useEffect, useState } from "react"
 
 import Sort from "@c/ui/Sort/Sort"
 
 import Checkbox from "@c/ui/Checkbox/Checkbox"
 
-import { useActions } from "@/store/hooks"
+import { useActions, useAppSelector } from "@/store/hooks"
 import { FilterAvailabilityType } from "@/store/types"
 
 import styles from "./FilterAvailability.module.scss"
+import { availabilityFilterSelector } from "@/store/selectors"
 
 const FilterAvailability: FC = () => {
 	const { changeFilter } = useActions()
+
+	const filter = useAppSelector(availabilityFilterSelector)
 
 	const [value, setValue] = useState<FilterAvailabilityType>(null)
 
@@ -19,6 +22,10 @@ const FilterAvailability: FC = () => {
 	}
 
 	const applyValue = () => changeFilter({ availability: value })
+
+	useEffect(() => {
+		setValue(filter)
+	}, [filter])
 
 	return (
 		<Sort title={"Наличие"} className={styles.filter} onChange={applyValue}>
